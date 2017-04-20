@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.IntialDateGB = new System.Windows.Forms.GroupBox();
+            this.CalculationButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.PolarizationGB = new System.Windows.Forms.GroupBox();
             this.ParallelRB = new System.Windows.Forms.RadioButton();
@@ -47,7 +48,6 @@
             this.NumberOfDiscsLabel = new System.Windows.Forms.Label();
             this.WavelengthLabel = new System.Windows.Forms.Label();
             this.RangeLabel = new System.Windows.Forms.Label();
-            this.CalculationButton = new System.Windows.Forms.Button();
             this.IntialDateGB.SuspendLayout();
             this.PolarizationGB.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +79,17 @@
             this.IntialDateGB.TabIndex = 0;
             this.IntialDateGB.TabStop = false;
             this.IntialDateGB.Text = "Исходные данные";
+            // 
+            // CalculationButton
+            // 
+            this.CalculationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CalculationButton.Location = new System.Drawing.Point(630, 15);
+            this.CalculationButton.Name = "CalculationButton";
+            this.CalculationButton.Size = new System.Drawing.Size(75, 23);
+            this.CalculationButton.TabIndex = 17;
+            this.CalculationButton.Text = "Расчёт";
+            this.CalculationButton.UseVisualStyleBackColor = true;
+            this.CalculationButton.Click += new System.EventHandler(this.CalculationButton_Click);
             // 
             // ExitButton
             // 
@@ -249,16 +260,6 @@
             this.RangeLabel.Size = new System.Drawing.Size(148, 13);
             this.RangeLabel.TabIndex = 0;
             this.RangeLabel.Text = "Диапазон радиусов частиц:";
-            // 
-            // CalculationButton
-            // 
-            this.CalculationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CalculationButton.Location = new System.Drawing.Point(630, 15);
-            this.CalculationButton.Name = "CalculationButton";
-            this.CalculationButton.Size = new System.Drawing.Size(75, 23);
-            this.CalculationButton.TabIndex = 17;
-            this.CalculationButton.Text = "Расчёт";
-            this.CalculationButton.UseVisualStyleBackColor = true;
             // 
             // IntialDateControl
             // 

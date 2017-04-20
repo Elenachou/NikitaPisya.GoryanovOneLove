@@ -69,7 +69,7 @@
             this.Controls.Add(this.outputControl1);
             this.Controls.Add(this.intialDateControl1);
             this.Name = "Form1";
-            this.Text = "Pisya";
+            this.Text = "MainForm";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.ResumeLayout(false);

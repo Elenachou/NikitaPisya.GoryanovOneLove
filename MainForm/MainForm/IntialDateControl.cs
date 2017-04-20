@@ -17,13 +17,27 @@ namespace MainForm
             InitializeComponent();
         }
 
-        public string SomeValue
+        /* public string SomeValue
+         {
+             get 
+             {
+                 return WavelengthTB.Text;   
+             }
+             set
+             {
+                 Wavelength.Text = value;
+             }
+         }
+         *  проблема в чём,я тут поняла, что кнопка расчёт нах-ся на этом же контроле 
+         и не нужно передавать значения textBox-ов на главную форму . 
+         * При нажатии кнопки будут рассчитываться данные, и заполняться таблица и Контрол снизу.
+         * Я правильно думаю?
+ */
+
+        private void CalculationButton_Click(object sender, EventArgs e)
         {
-            get 
-            {
-                return WavelengthTB.Text;
-            }
-            
+            var wavelength = WavelengthTB.Text;
+
         }
     }
     
