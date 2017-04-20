@@ -31,9 +31,5 @@ namespace MainForm
 
         }
 
-        private void CalculationButton_Click(object sender, EventArgs e)
-        {
-            var wavelength = IntialDateControl.SomeValue.Text;
-        }
     }
 }

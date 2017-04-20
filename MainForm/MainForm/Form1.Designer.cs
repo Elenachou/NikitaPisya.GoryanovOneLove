@@ -31,7 +31,6 @@
             this.DGV = new System.Windows.Forms.DataGridView();
             this.outputControl1 = new MainForm.OutputControl();
             this.intialDateControl1 = new MainForm.IntialDateControl();
-            this.CalculationButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,25 +58,13 @@
             this.intialDateControl1.Location = new System.Drawing.Point(0, 0);
             this.intialDateControl1.Name = "intialDateControl1";
             this.intialDateControl1.Size = new System.Drawing.Size(881, 153);
-            this.intialDateControl1.SomeValue = "";
             this.intialDateControl1.TabIndex = 0;
-            // 
-            // CalculationButton
-            // 
-            this.CalculationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CalculationButton.Location = new System.Drawing.Point(790, 25);
-            this.CalculationButton.Name = "CalculationButton";
-            this.CalculationButton.Size = new System.Drawing.Size(75, 23);
-            this.CalculationButton.TabIndex = 16;
-            this.CalculationButton.Text = "Расчёт";
-            this.CalculationButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 558);
-            this.Controls.Add(this.CalculationButton);
             this.Controls.Add(this.DGV);
             this.Controls.Add(this.outputControl1);
             this.Controls.Add(this.intialDateControl1);
@@ -94,7 +81,6 @@
         private IntialDateControl intialDateControl1;
         private OutputControl outputControl1;
         private System.Windows.Forms.DataGridView DGV;
-        private System.Windows.Forms.Button CalculationButton;
 
     }
 }

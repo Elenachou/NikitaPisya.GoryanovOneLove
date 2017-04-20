@@ -47,6 +47,7 @@
             this.NumberOfDiscsLabel = new System.Windows.Forms.Label();
             this.WavelengthLabel = new System.Windows.Forms.Label();
             this.RangeLabel = new System.Windows.Forms.Label();
+            this.CalculationButton = new System.Windows.Forms.Button();
             this.IntialDateGB.SuspendLayout();
             this.PolarizationGB.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             this.IntialDateGB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.IntialDateGB.Controls.Add(this.CalculationButton);
             this.IntialDateGB.Controls.Add(this.ExitButton);
             this.IntialDateGB.Controls.Add(this.PolarizationGB);
             this.IntialDateGB.Controls.Add(this.label8);
@@ -248,6 +250,16 @@
             this.RangeLabel.TabIndex = 0;
             this.RangeLabel.Text = "Диапазон радиусов частиц:";
             // 
+            // CalculationButton
+            // 
+            this.CalculationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CalculationButton.Location = new System.Drawing.Point(630, 15);
+            this.CalculationButton.Name = "CalculationButton";
+            this.CalculationButton.Size = new System.Drawing.Size(75, 23);
+            this.CalculationButton.TabIndex = 17;
+            this.CalculationButton.Text = "Расчёт";
+            this.CalculationButton.UseVisualStyleBackColor = true;
+            // 
             // IntialDateControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,5 +296,6 @@
         private System.Windows.Forms.GroupBox PolarizationGB;
         private System.Windows.Forms.RadioButton ParallelRB;
         private System.Windows.Forms.RadioButton PerpendicularRB;
+        private System.Windows.Forms.Button CalculationButton;
     }
 }

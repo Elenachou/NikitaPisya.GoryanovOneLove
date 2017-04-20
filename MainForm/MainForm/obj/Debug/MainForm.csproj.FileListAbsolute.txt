@@ -10,3 +10,11 @@ C:\Users\Елена\Documents\Visual Studio 2013\Projects\MainForm\MainForm\obj\
 C:\Users\Елена\Documents\Visual Studio 2013\Projects\MainForm\MainForm\obj\Debug\MainForm.pdb
 C:\Users\Елена\Documents\VKR\MainForm\MainForm\bin\Debug\MainForm.exe.config
 C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MainForm.exe
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MainForm.Form1.resources
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MainForm.IntialDateControl.resources
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MainForm.OutputControl.resources
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MainForm.Properties.Resources.resources
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MainForm.csproj.GenerateResource.Cache
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\bin\Debug\MainForm.exe
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\bin\Debug\MainForm.pdb
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MainForm.pdb
