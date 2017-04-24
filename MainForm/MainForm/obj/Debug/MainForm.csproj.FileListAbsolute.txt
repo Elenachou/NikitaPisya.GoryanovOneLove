@@ -18,3 +18,5 @@ C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MainForm.csproj.Ge
 C:\Users\Елена\Documents\VKR\MainForm\MainForm\bin\Debug\MainForm.exe
 C:\Users\Елена\Documents\VKR\MainForm\MainForm\bin\Debug\MainForm.pdb
 C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MainForm.pdb
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MainForm.MainForm.resources
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\bin\Debug\MieCalc.exe.config

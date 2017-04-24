@@ -1,0 +1,12 @@
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MieCalc.IntialDateControl.resources
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MieCalc.OutputControl.resources
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MieCalc.Properties.Resources.resources
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MieCalc.csproj.GenerateResource.Cache
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\bin\Debug\MieCalc.exe.config
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\bin\Debug\MieCalc.exe
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\bin\Debug\MieCalc.pdb
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MieCalc.MainForm.resources
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MieCalc.exe
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MieCalc.pdb
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MieCalc.csprojResolveAssemblyReference.cache
+C:\Users\Елена\Documents\VKR\MainForm\MainForm\obj\Debug\MieCalc.InitialDataControl.resources

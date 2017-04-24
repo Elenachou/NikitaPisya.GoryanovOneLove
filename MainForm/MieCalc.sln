@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainForm", "MainForm\MainForm.csproj", "{FEBA4993-A32B-4302-83FC-89FBE771672D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MieCalc", "MainForm\MieCalc.csproj", "{FEBA4993-A32B-4302-83FC-89FBE771672D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
