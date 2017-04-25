@@ -1,6 +1,6 @@
-﻿namespace MainForm
+﻿namespace MieCalc
 {
-    partial class IntialDateControl
+    partial class InitialDataControl
     {
         /// <summary> 
         /// Требуется переменная конструктора.
@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.IntialDateGB = new System.Windows.Forms.GroupBox();
             this.CalculationButton = new System.Windows.Forms.Button();
-            this.ExitButton = new System.Windows.Forms.Button();
             this.PolarizationGB = new System.Windows.Forms.GroupBox();
             this.ParallelRB = new System.Windows.Forms.RadioButton();
             this.PerpendicularRB = new System.Windows.Forms.RadioButton();
@@ -48,58 +46,18 @@
             this.NumberOfDiscsLabel = new System.Windows.Forms.Label();
             this.WavelengthLabel = new System.Windows.Forms.Label();
             this.RangeLabel = new System.Windows.Forms.Label();
-            this.IntialDateGB.SuspendLayout();
             this.PolarizationGB.SuspendLayout();
             this.SuspendLayout();
             // 
-            // IntialDateGB
-            // 
-            this.IntialDateGB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.IntialDateGB.Controls.Add(this.CalculationButton);
-            this.IntialDateGB.Controls.Add(this.ExitButton);
-            this.IntialDateGB.Controls.Add(this.PolarizationGB);
-            this.IntialDateGB.Controls.Add(this.label8);
-            this.IntialDateGB.Controls.Add(this.label7);
-            this.IntialDateGB.Controls.Add(this.label6);
-            this.IntialDateGB.Controls.Add(this.StepsTB);
-            this.IntialDateGB.Controls.Add(this.WavelengthTB);
-            this.IntialDateGB.Controls.Add(this.NumberOfDiscsTB);
-            this.IntialDateGB.Controls.Add(this.RelativeHumidityTB);
-            this.IntialDateGB.Controls.Add(this.RangeMaxTB);
-            this.IntialDateGB.Controls.Add(this.RangeMinTB);
-            this.IntialDateGB.Controls.Add(this.StepsLabel);
-            this.IntialDateGB.Controls.Add(this.RElativeHumidityLabel);
-            this.IntialDateGB.Controls.Add(this.NumberOfDiscsLabel);
-            this.IntialDateGB.Controls.Add(this.WavelengthLabel);
-            this.IntialDateGB.Controls.Add(this.RangeLabel);
-            this.IntialDateGB.Location = new System.Drawing.Point(4, 4);
-            this.IntialDateGB.Name = "IntialDateGB";
-            this.IntialDateGB.Size = new System.Drawing.Size(721, 146);
-            this.IntialDateGB.TabIndex = 0;
-            this.IntialDateGB.TabStop = false;
-            this.IntialDateGB.Text = "Исходные данные";
-            // 
             // CalculationButton
             // 
-            this.CalculationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CalculationButton.Location = new System.Drawing.Point(630, 15);
+            this.CalculationButton.Location = new System.Drawing.Point(339, 108);
             this.CalculationButton.Name = "CalculationButton";
             this.CalculationButton.Size = new System.Drawing.Size(75, 23);
             this.CalculationButton.TabIndex = 17;
             this.CalculationButton.Text = "Расчёт";
             this.CalculationButton.UseVisualStyleBackColor = true;
-            this.CalculationButton.Click += new System.EventHandler(this.CalculationButton_Click);
-            // 
-            // ExitButton
-            // 
-            this.ExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExitButton.Location = new System.Drawing.Point(630, 109);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(75, 23);
-            this.ExitButton.TabIndex = 16;
-            this.ExitButton.Text = "Выход";
-            this.ExitButton.UseVisualStyleBackColor = true;
+            this.CalculationButton.Click += new System.EventHandler(this.CalculationButton_Click_1);
             // 
             // PolarizationGB
             // 
@@ -261,18 +219,32 @@
             this.RangeLabel.TabIndex = 0;
             this.RangeLabel.Text = "Диапазон радиусов частиц:";
             // 
-            // IntialDateControl
+            // InitialDataControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.IntialDateGB);
-            this.Name = "IntialDateControl";
-            this.Size = new System.Drawing.Size(725, 150);
-            this.IntialDateGB.ResumeLayout(false);
-            this.IntialDateGB.PerformLayout();
+            this.Controls.Add(this.CalculationButton);
+            this.Controls.Add(this.PolarizationGB);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.StepsTB);
+            this.Controls.Add(this.WavelengthTB);
+            this.Controls.Add(this.NumberOfDiscsTB);
+            this.Controls.Add(this.RelativeHumidityTB);
+            this.Controls.Add(this.RangeMaxTB);
+            this.Controls.Add(this.RangeMinTB);
+            this.Controls.Add(this.StepsLabel);
+            this.Controls.Add(this.RElativeHumidityLabel);
+            this.Controls.Add(this.NumberOfDiscsLabel);
+            this.Controls.Add(this.WavelengthLabel);
+            this.Controls.Add(this.RangeLabel);
+            this.Name = "InitialDataControl";
+            this.Size = new System.Drawing.Size(523, 150);
             this.PolarizationGB.ResumeLayout(false);
             this.PolarizationGB.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -293,7 +265,6 @@
         private System.Windows.Forms.Label NumberOfDiscsLabel;
         private System.Windows.Forms.Label WavelengthLabel;
         private System.Windows.Forms.Label RangeLabel;
-        private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.GroupBox PolarizationGB;
         private System.Windows.Forms.RadioButton ParallelRB;
         private System.Windows.Forms.RadioButton PerpendicularRB;

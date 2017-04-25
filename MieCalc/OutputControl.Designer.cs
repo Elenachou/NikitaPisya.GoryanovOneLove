@@ -1,4 +1,4 @@
-﻿namespace MainForm
+﻿namespace MieCalc
 {
     partial class OutputControl
     {
@@ -33,14 +33,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.DiffractionParameterTB = new System.Windows.Forms.TextBox();
+            this.RefractiveIndexTB = new System.Windows.Forms.TextBox();
+            this.ScatteringFactorTB = new System.Windows.Forms.TextBox();
+            this.AbsortionFactorTB = new System.Windows.Forms.TextBox();
+            this.BackscatteringFactor = new System.Windows.Forms.TextBox();
+            this.IntensityTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.AngleTB = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
@@ -105,47 +105,49 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Фактор эффективности обратного рассеяния:";
             // 
-            // textBox1
+            // DiffractionParameterTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(257, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.DiffractionParameterTB.Location = new System.Drawing.Point(257, 12);
+            this.DiffractionParameterTB.Name = "DiffractionParameterTB";
+            this.DiffractionParameterTB.Size = new System.Drawing.Size(100, 20);
+            this.DiffractionParameterTB.TabIndex = 5;
+            this.DiffractionParameterTB.TextChanged += new System.EventHandler(this.DiffractionParameterTB_TextChanged);
             // 
-            // textBox2
+            // RefractiveIndexTB
             // 
-            this.textBox2.Location = new System.Drawing.Point(257, 37);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.RefractiveIndexTB.Location = new System.Drawing.Point(257, 37);
+            this.RefractiveIndexTB.Name = "RefractiveIndexTB";
+            this.RefractiveIndexTB.Size = new System.Drawing.Size(100, 20);
+            this.RefractiveIndexTB.TabIndex = 6;
+            this.RefractiveIndexTB.TextChanged += new System.EventHandler(this.RefractiveIndexTB_TextChanged);
             // 
-            // textBox3
+            // ScatteringFactorTB
             // 
-            this.textBox3.Location = new System.Drawing.Point(257, 62);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.ScatteringFactorTB.Location = new System.Drawing.Point(257, 62);
+            this.ScatteringFactorTB.Name = "ScatteringFactorTB";
+            this.ScatteringFactorTB.Size = new System.Drawing.Size(100, 20);
+            this.ScatteringFactorTB.TabIndex = 7;
             // 
-            // textBox4
+            // AbsortionFactorTB
             // 
-            this.textBox4.Location = new System.Drawing.Point(257, 87);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 8;
+            this.AbsortionFactorTB.Location = new System.Drawing.Point(257, 87);
+            this.AbsortionFactorTB.Name = "AbsortionFactorTB";
+            this.AbsortionFactorTB.Size = new System.Drawing.Size(100, 20);
+            this.AbsortionFactorTB.TabIndex = 8;
             // 
-            // textBox5
+            // BackscatteringFactor
             // 
-            this.textBox5.Location = new System.Drawing.Point(257, 112);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 9;
+            this.BackscatteringFactor.Location = new System.Drawing.Point(257, 112);
+            this.BackscatteringFactor.Name = "BackscatteringFactor";
+            this.BackscatteringFactor.Size = new System.Drawing.Size(100, 20);
+            this.BackscatteringFactor.TabIndex = 9;
             // 
-            // textBox7
+            // IntensityTB
             // 
-            this.textBox7.Location = new System.Drawing.Point(628, 4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(67, 20);
-            this.textBox7.TabIndex = 11;
+            this.IntensityTB.Location = new System.Drawing.Point(628, 4);
+            this.IntensityTB.Name = "IntensityTB";
+            this.IntensityTB.Size = new System.Drawing.Size(67, 20);
+            this.IntensityTB.TabIndex = 11;
             // 
             // label6
             // 
@@ -156,12 +158,12 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Интенсивность:";
             // 
-            // textBox6
+            // AngleTB
             // 
-            this.textBox6.Location = new System.Drawing.Point(628, 26);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(67, 20);
-            this.textBox6.TabIndex = 13;
+            this.AngleTB.Location = new System.Drawing.Point(628, 26);
+            this.AngleTB.Name = "AngleTB";
+            this.AngleTB.Size = new System.Drawing.Size(67, 20);
+            this.AngleTB.TabIndex = 13;
             // 
             // label7
             // 
@@ -327,14 +329,14 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.AngleTB);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.IntensityTB);
+            this.Controls.Add(this.BackscatteringFactor);
+            this.Controls.Add(this.AbsortionFactorTB);
+            this.Controls.Add(this.ScatteringFactorTB);
+            this.Controls.Add(this.RefractiveIndexTB);
+            this.Controls.Add(this.DiffractionParameterTB);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -360,14 +362,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox DiffractionParameterTB;
+        private System.Windows.Forms.TextBox RefractiveIndexTB;
+        private System.Windows.Forms.TextBox ScatteringFactorTB;
+        private System.Windows.Forms.TextBox AbsortionFactorTB;
+        private System.Windows.Forms.TextBox BackscatteringFactor;
+        private System.Windows.Forms.TextBox IntensityTB;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox AngleTB;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;

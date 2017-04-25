@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainForm
+namespace MieCalc
 {
-    public partial class OutputControl : UserControl
+    public partial class ResControl : UserControl
     {
-        public OutputControl()
+        public ResControl()
         {
             InitializeComponent();
         }
