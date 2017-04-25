@@ -7,6 +7,8 @@ namespace MieCalc
 {
     public class CalculationResult
     {
+        public double diffractionParametr;
         public List<double> Results { get; set; }
+        
     }
 }

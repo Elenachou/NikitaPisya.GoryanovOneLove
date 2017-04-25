@@ -15,6 +15,15 @@ namespace MieCalc
         public ResControl()
         {
             InitializeComponent();
+            DataTable table = new DataTable();
+            table.Columns.Add("Угол", typeof(float));
+            table.Columns.Add("Интенсивность", typeof(float));
+            table.Columns.Add("S11", typeof(float));
+            table.Columns.Add("S33", typeof(float));
+            table.Columns.Add("S34", typeof(float));
+
+            ResultDGV.DataSource = table;
         }
+
     }
 }

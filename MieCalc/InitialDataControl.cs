@@ -29,51 +29,77 @@ namespace MieCalc
             InitializeComponent();
         }
 
-        //public string SomeValue
-        //{
-        //    get
-        //    {
-        //        return WavelengthTB.Text;
-        //    }
-        //    set
-        //    {
-        //        WavelengthTB.Text = value;
-        //    }
-        //}
-
-        //public double Foo
-        //{
-        //    get
-        //    {
-        //        return Convert.ToDouble(WavelengthTB.Text);
-        //    }
-        //    set
-        //    {
-        //        WavelengthTB.Text = value.ToString();
-        //    }
-        //}
-        /*  проблема в чём,я тут поняла, что кнопка расчёт нах-ся на этом же контроле 
-         и не нужно передавать значения textBox-ов на главную форму . 
-         * При нажатии кнопки будут рассчитываться данные, и заполняться таблица и Контрол снизу.
-         * Я правильно думаю?
- */
-
-        private void CalculationButton_Click(object sender, EventArgs e)
+        public double wavelength
         {
-            var wavelength = WavelengthTB.Text;                 // Так?
-            var steps = StepsTB.Text;
-            var numberOfDiscs = NumberOfDiscsTB.Text;
-            var relativeHumidityTB = RelativeHumidityTB.Text;
-            var rangeMaxTB = RangeMaxTB.Text;
-            var rangeMin = RangeMinTB.Text;
+            get
+            {
+                return Convert.ToDouble(WavelengthTB.Text);
+            }
+            set
+            {
+                WavelengthTB.Text = value.ToString();
+            }
+        }
+        public double rangeMax
+        {
+            get
+            {
+                return Convert.ToDouble(RangeMaxTB.Text);
+            }
+            set
+            {
+                RangeMaxTB.Text = value.ToString();
+            }
+        }
 
-
-
+        public double rangeMin
+        {
+            get
+            {
+                return Convert.ToDouble(RangeMinTB.Text);
+            }
+            set
+            {
+                RangeMinTB.Text = value.ToString();
+            }
+        }
+        public double steps
+        {
+            get
+            {
+                return Convert.ToDouble(StepsTB.Text);
+            }
+            set
+            {
+                StepsTB.Text = value.ToString();
+            }
+        }
+        public double numberOfDiscs
+        {
+            get
+            {
+                return Convert.ToDouble(NumberOfDiscsTB.Text);
+            }
+            set
+            {
+                NumberOfDiscsTB.Text = value.ToString();
+            }
+        }
+        public double relativeHumidity
+        {
+            get
+            {
+                return Convert.ToDouble(RelativeHumidityTB.Text);
+            }
+            set
+            {
+                RelativeHumidityTB.Text = value.ToString();
+            }
         }
 
         private void Calculate()
         {
-            _calculationResult = Calculator.Calculate();
+            _calculationResult = Calculator.Calculate(wavelength,rangeMin,rangeMax,steps,numberOfDiscs, relativeHumidity);
         }
 
         private void CalculationButton_Click_1(object sender, EventArgs e)

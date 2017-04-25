@@ -12,3 +12,14 @@ C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\MieCalc\obj\Debug\MieCalc.
 C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\MieCalc\MieCalc\MieCalc\bin\Debug\MieCalc.exe.config
 C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\MieCalc\MieCalc\MieCalc\obj\Debug\MieCalc.exe
 C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\MieCalc\MieCalc\MieCalc\obj\Debug\MieCalc.pdb
+C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\bin\Debug\MieCalc.exe.config
+C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\obj\Debug\MieCalc.exe
+C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\obj\Debug\MieCalc.pdb
+C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\bin\Debug\MieCalc.exe
+C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\bin\Debug\MieCalc.pdb
+C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\obj\Debug\MieCalc.MieCalcForm.resources
+C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\obj\Debug\MieCalc.InitialDataControl.resources
+C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\obj\Debug\MieCalc.Properties.Resources.resources
+C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\obj\Debug\MieCalc.ResControl.resources
+C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\obj\Debug\MieCalc.csproj.GenerateResource.Cache
+C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\obj\Debug\MieCalc.OutputControl.resources

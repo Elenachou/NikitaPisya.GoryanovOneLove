@@ -79,6 +79,9 @@
     <EmbeddedResource Include="InitialDataControl.resx">
       <DependentUpon>InitialDataControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OutputControl.resx">
+      <DependentUpon>OutputControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
