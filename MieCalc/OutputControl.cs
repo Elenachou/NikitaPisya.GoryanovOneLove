@@ -12,14 +12,22 @@ namespace MieCalc
 {
     public partial class OutputControl : UserControl
     {
+        public CalculationResult CalculationResult
+        {
+            set
+            {
+                DiffractionParameterTB.Text = value.diffractionParametr.ToString();
+            }
+        }
+
         public OutputControl()
         {
             InitializeComponent();
         }
-
+        
         private void DiffractionParameterTB_TextChanged(object sender, EventArgs e) //Показатель дифракции
         {
-
+             
         }
 
         private void RefractiveIndexTB_TextChanged(object sender, EventArgs e) // Показатель преломления

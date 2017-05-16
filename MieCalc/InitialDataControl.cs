@@ -16,6 +16,15 @@ namespace MieCalc
 
         public event EventHandler Calculated;
 
+        public InitialData InitialData
+        {
+            set
+            {
+                wavelength = value.Steps;
+                rangeMax = value.Value2;
+            }
+        }
+
         public CalculationResult CalculationResult
         {
             get
@@ -37,7 +46,9 @@ namespace MieCalc
             }
             set
             {
-                WavelengthTB.Text = value.ToString();
+                //Задание TextBox значние по умолчанию
+                var wv = 0.65;
+                WavelengthTB.Text = wv.ToString();
             }
         }
         public double rangeMax

@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="CalculationResult.cs" />
     <Compile Include="Calculator.cs" />
+    <Compile Include="InitialData.cs" />
     <Compile Include="MieCalc.cs">
       <SubType>Form</SubType>
     </Compile>

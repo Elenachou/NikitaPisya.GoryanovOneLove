@@ -15,6 +15,15 @@ namespace MieCalc
         public MieCalcForm()
         {
             InitializeComponent();
+            var initialData = new InitialData();
+            initialDataControl1.InitialData = initialData;
+            initialDataControl1.Calculated += initialDataControl1_Calculated;
+        }
+
+        void initialDataControl1_Calculated(object sender, EventArgs e)
+        {
+            var result = initialDataControl1.CalculationResult;
+            outputControl1.CalculationResult = result;
         }
     }
 }

@@ -8,7 +8,10 @@ namespace MieCalc
     public class CalculationResult
     {
         public double diffractionParametr;
-        public List<double> Results { get; set; }
+
+
+        //OutputControl  = new OutputControl();
+        //OutputControl = CalculationResult._calculationResult
         
     }
 }
