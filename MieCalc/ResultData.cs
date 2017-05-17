@@ -7,11 +7,11 @@ namespace MieCalc
 {
     public class ResultData
     {
-        public double diffractionParametr;
+        public double DiffractionParameter;
 
 
         //OutputControl  = new OutputControl();
-        //OutputControl = CalculationResult._calculationResult
+        //OutputControl = ResultData._resultData
         
     }
 }

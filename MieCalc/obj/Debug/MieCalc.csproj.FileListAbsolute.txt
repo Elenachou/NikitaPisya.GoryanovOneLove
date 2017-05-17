@@ -28,3 +28,14 @@ C:\Users\Елена\Documents\Desktop\MieCalcVKR\MieCalc\bin\Debug\MieCalc.exe.c
 C:\Users\Елена\Documents\Desktop\MieCalcVKR\MieCalc\obj\Debug\MieCalc.exe
 C:\Users\Елена\Documents\Desktop\MieCalcVKR\MieCalc\obj\Debug\MieCalc.pdb
 C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\bin\Debug\MieCalc.exe.config
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\bin\Debug\MieCalc.exe
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\bin\Debug\MieCalc.pdb
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Debug\MieCalc.csprojResolveAssemblyReference.cache
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Debug\MieCalc.MieCalcForm.resources
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Debug\MieCalc.InitialDataControl.resources
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Debug\MieCalc.IntegralResultDataControl.resources
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Debug\MieCalc.Properties.Resources.resources
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Debug\MieCalc.ResultDataControl.resources
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Debug\MieCalc.csproj.GenerateResource.Cache
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Debug\MieCalc.exe
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Debug\MieCalc.pdb

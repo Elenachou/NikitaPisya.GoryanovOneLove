@@ -16,7 +16,7 @@ namespace MieCalc
         {
             set
             {
-                DiffractionParameterTB.Text = value.diffractionParametr.ToString();
+                DiffractionParameterTB.Text = value.DiffractionParameter.ToString();
             }
         }
 

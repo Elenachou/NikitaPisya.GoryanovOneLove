@@ -12,7 +12,9 @@ namespace MieCalc
 {
     public partial class InitialDataControl : UserControl
     {
-        private ResultData _calculationResult;
+        private ResultData _resultData;
+        private InitialData _initialData;
+
 
         public event EventHandler Calculated;
 
@@ -20,16 +22,26 @@ namespace MieCalc
         {
             set
             {
-                wavelength = value.Steps;
-                rangeMax = value.Value2;
+                _initialData = value;
+                WavelengthTB.Text = _initialData.WaveLength.ToString();
+                StepsTB.Text = _initialData.Steps.ToString();
+                RangeMaxTB.Text = _initialData.RangeMax.ToString();
+                RangeMinTB.Text = _initialData.RangeMin.ToString();
+            }
+            get
+            {
+                _initialData.WaveLength = Convert.ToDouble(WavelengthTB.Text);
+                _initialData.Steps = Convert.ToInt32(StepsTB.Text);
+
+                return _initialData;
             }
         }
 
-        public ResultData CalculationResult
+        public ResultData ResultData
         {
             get
             {
-                return _calculationResult;
+                return _resultData;
             }
         }
 
@@ -38,79 +50,10 @@ namespace MieCalc
             InitializeComponent();
         }
 
-        public double wavelength
-        {
-            get
-            {
-                return Convert.ToDouble(WavelengthTB.Text);
-            }
-            set
-            {
-                //Задание TextBox значние по умолчанию
-                var wv = 0.65;
-                WavelengthTB.Text = wv.ToString();
-            }
-        }
-        public double rangeMax
-        {
-            get
-            {
-                return Convert.ToDouble(RangeMaxTB.Text);
-            }
-            set
-            {
-                RangeMaxTB.Text = value.ToString();
-            }
-        }
-
-        public double rangeMin
-        {
-            get
-            {
-                return Convert.ToDouble(RangeMinTB.Text);
-            }
-            set
-            {
-                RangeMinTB.Text = value.ToString();
-            }
-        }
-        public double steps
-        {
-            get
-            {
-                return Convert.ToDouble(StepsTB.Text);
-            }
-            set
-            {
-                StepsTB.Text = value.ToString();
-            }
-        }
-        public double numberOfDiscs
-        {
-            get
-            {
-                return Convert.ToDouble(NumberOfDiscsTB.Text);
-            }
-            set
-            {
-                NumberOfDiscsTB.Text = value.ToString();
-            }
-        }
-        public double relativeHumidity
-        {
-            get
-            {
-                return Convert.ToDouble(RelativeHumidityTB.Text);
-            }
-            set
-            {
-                RelativeHumidityTB.Text = value.ToString();
-            }
-        }
-
         private void Calculate()
         {
-            _calculationResult = Calculator.Calculate(wavelength,rangeMin,rangeMax,steps,numberOfDiscs, relativeHumidity);
+
+            _resultData = Calculator.Calculate(InitialData);
         }
 
         private void CalculationButton_Click_1(object sender, EventArgs e)
@@ -119,6 +62,14 @@ namespace MieCalc
             if (Calculated != null)
             {
                 Calculated(this, EventArgs.Empty);
+            }
+        }
+
+        private void WavelengthTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+            {
+
             }
         }
     }

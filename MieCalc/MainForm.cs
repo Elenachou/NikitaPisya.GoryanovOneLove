@@ -22,7 +22,7 @@ namespace MieCalc
 
         void initialDataControl1_Calculated(object sender, EventArgs e)
         {
-            var result = initialDataControl1.CalculationResult;
+            var result = initialDataControl1.ResultData;
             outputControl1.CalculationResult = result;
         }
     }

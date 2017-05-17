@@ -11,14 +11,26 @@ namespace MieCalc
     /// </summary>
     public class InitialData
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public double Steps = 2;
+        public double WaveLength { get; set; }
         
-        /// <summary>
-        /// 
-        /// </summary>
-        public double Value2 = 2.5;
+        public double RangeMax { get; set; }
+
+        public double RangeMin { get; set; }
+        
+        public int Steps { get; set; }
+        
+        public int DiscretsCount { get; set; }
+        
+        public double RelativeHumidity { get; set; }
+
+        public InitialData()
+        {
+            WaveLength = 10.0;
+            RangeMax = 100.0;
+            RangeMin = 10.0;
+            Steps = 20;
+            DiscretsCount = 5;
+            RelativeHumidity = 1.0;
+        }
     }
 }

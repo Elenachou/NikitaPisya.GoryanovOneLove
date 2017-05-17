@@ -8,7 +8,7 @@ namespace MieCalc
 {
     public static class Calculator
     {
-        public static ResultData Calculate(double wavelength, double rangeMin, double rangeMax, double steps, double numberOfDiscs, double relativeHumidity)
+        public static ResultData Calculate(InitialData data)
         {
 
 
@@ -145,8 +145,7 @@ namespace MieCalc
 ////////////////////////////////////////////////////////////////////////////////
             return new ResultData()
             {
-                 diffractionParametr = 2 * Math.PI * rangeMin * refMed / wavelength,
-
+                 DiffractionParameter = 2 * Math.PI * data.RangeMin * refMed / data.WaveLength
             };
         }
     }

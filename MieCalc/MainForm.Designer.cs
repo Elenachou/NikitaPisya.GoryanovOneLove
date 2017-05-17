@@ -50,6 +50,7 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.outputControl1 = new MieCalc.IntegralResultDataControl();
+            this.экспортироватьВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InitialDataGB.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -196,6 +197,7 @@
             this.открытьToolStripMenuItem,
             this.сохранитьToolStripMenuItem,
             this.toolStripSeparator2,
+            this.экспортироватьВExcelToolStripMenuItem,
             this.toolStripSeparator1,
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
@@ -205,35 +207,35 @@
             // создатьToolStripMenuItem
             // 
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.создатьToolStripMenuItem.Text = "Создать";
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(129, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(198, 6);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(198, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             // 
             // оПрограммеToolStripMenuItem
@@ -256,6 +258,12 @@
             this.outputControl1.Name = "outputControl1";
             this.outputControl1.Size = new System.Drawing.Size(826, 146);
             this.outputControl1.TabIndex = 1;
+            // 
+            // экспортироватьВExcelToolStripMenuItem
+            // 
+            this.экспортироватьВExcelToolStripMenuItem.Name = "экспортироватьВExcelToolStripMenuItem";
+            this.экспортироватьВExcelToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.экспортироватьВExcelToolStripMenuItem.Text = "Экспортировать в Excel";
             // 
             // MieCalcForm
             // 
@@ -306,6 +314,7 @@
         private ResultDataControl resControl2;
         private ResultDataControl resControl3;
         private ResultDataControl resControl4;
+        private System.Windows.Forms.ToolStripMenuItem экспортироватьВExcelToolStripMenuItem;
     }
 }
 

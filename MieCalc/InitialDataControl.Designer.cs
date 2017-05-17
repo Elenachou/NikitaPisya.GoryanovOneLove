@@ -130,6 +130,7 @@
             this.WavelengthTB.Name = "WavelengthTB";
             this.WavelengthTB.Size = new System.Drawing.Size(39, 20);
             this.WavelengthTB.TabIndex = 9;
+            this.WavelengthTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WavelengthTB_KeyPress);
             // 
             // NumberOfDiscsTB
             // 
