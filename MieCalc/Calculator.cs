@@ -8,7 +8,7 @@ namespace MieCalc
 {
     public static class Calculator
     {
-        public static CalculationResult Calculate(double wavelength, double rangeMin, double rangeMax, double steps, double numberOfDiscs, double relativeHumidity)
+        public static ResultData Calculate(double wavelength, double rangeMin, double rangeMax, double steps, double numberOfDiscs, double relativeHumidity)
         {
 
 
@@ -143,7 +143,7 @@ namespace MieCalc
         0.343,0.361,0.385};
         var refMed = 1;
 ////////////////////////////////////////////////////////////////////////////////
-            return new CalculationResult()
+            return new ResultData()
             {
                  diffractionParametr = 2 * Math.PI * rangeMin * refMed / wavelength,
 

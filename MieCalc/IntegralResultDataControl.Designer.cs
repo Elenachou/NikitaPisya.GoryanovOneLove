@@ -1,6 +1,6 @@
 ﻿namespace MieCalc
 {
-    partial class OutputControl
+    partial class IntegralResultDataControl
     {
         /// <summary> 
         /// Требуется переменная конструктора.

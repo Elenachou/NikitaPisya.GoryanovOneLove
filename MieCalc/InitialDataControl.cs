@@ -12,7 +12,7 @@ namespace MieCalc
 {
     public partial class InitialDataControl : UserControl
     {
-        private CalculationResult _calculationResult;
+        private ResultData _calculationResult;
 
         public event EventHandler Calculated;
 
@@ -25,7 +25,7 @@ namespace MieCalc
             }
         }
 
-        public CalculationResult CalculationResult
+        public ResultData CalculationResult
         {
             get
             {

@@ -32,13 +32,13 @@
             this.initialDataControl1 = new MieCalc.InitialDataControl();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.resControl1 = new MieCalc.ResControl();
+            this.resControl1 = new MieCalc.ResultDataControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.resControl2 = new MieCalc.ResControl();
+            this.resControl2 = new MieCalc.ResultDataControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.resControl3 = new MieCalc.ResControl();
+            this.resControl3 = new MieCalc.ResultDataControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.resControl4 = new MieCalc.ResControl();
+            this.resControl4 = new MieCalc.ResultDataControl();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +49,7 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.outputControl1 = new MieCalc.OutputControl();
+            this.outputControl1 = new MieCalc.IntegralResultDataControl();
             this.InitialDataGB.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -286,8 +286,8 @@
 
         private System.Windows.Forms.GroupBox InitialDataGB;
         private InitialDataControl initialDataControl1;
-        private OutputControl outputControl1;
-        private ResControl resControl1;
+        private IntegralResultDataControl outputControl1;
+        private ResultDataControl resControl1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -303,9 +303,9 @@
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem1;
-        private ResControl resControl2;
-        private ResControl resControl3;
-        private ResControl resControl4;
+        private ResultDataControl resControl2;
+        private ResultDataControl resControl3;
+        private ResultDataControl resControl4;
     }
 }
 

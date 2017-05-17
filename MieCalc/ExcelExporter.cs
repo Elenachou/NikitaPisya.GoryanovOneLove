@@ -9,16 +9,16 @@ namespace MieCalc
     /// <summary>
     /// 
     /// </summary>
-    public class InitialData
+    public static class ExcelExporter
     {
         /// <summary>
         /// 
         /// </summary>
-        public double Steps = 2;
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        public double Value2 = 2.5;
+        /// <param name="initialData"></param>
+        /// <param name="resultData"></param>
+        public static void Export(InitialData initialData, ResultData resultData)
+        {
+
+        }
     }
 }

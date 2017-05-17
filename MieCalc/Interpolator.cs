@@ -9,16 +9,17 @@ namespace MieCalc
     /// <summary>
     /// 
     /// </summary>
-    public class InitialData
+    public class Interpolator
     {
         /// <summary>
         /// 
         /// </summary>
-        public double Steps = 2;
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        public double Value2 = 2.5;
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public List<double> Interpolate(List<double> x, List<double> y)
+        {
+            return null;
+        }
     }
 }

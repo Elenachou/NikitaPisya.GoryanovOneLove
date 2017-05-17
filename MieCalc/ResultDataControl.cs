@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MieCalc
 {
-    public partial class ResControl : UserControl
+    public partial class ResultDataControl : UserControl
     {
-        public ResControl()
+        public ResultDataControl()
         {
             InitializeComponent();
             DataTable table = new DataTable();

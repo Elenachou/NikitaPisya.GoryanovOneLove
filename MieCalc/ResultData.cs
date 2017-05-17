@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MieCalc
 {
-    public class CalculationResult
+    public class ResultData
     {
         public double diffractionParametr;
 

@@ -1,6 +1,6 @@
 ﻿namespace MieCalc
 {
-    partial class ResControl
+    partial class ResultDataControl
     {
         /// <summary> 
         /// Требуется переменная конструктора.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MieCalc
 {
-    public partial class OutputControl : UserControl
+    public partial class IntegralResultDataControl : UserControl
     {
-        public CalculationResult CalculationResult
+        public ResultData CalculationResult
         {
             set
             {
@@ -20,7 +20,7 @@ namespace MieCalc
             }
         }
 
-        public OutputControl()
+        public IntegralResultDataControl()
         {
             InitializeComponent();
         }

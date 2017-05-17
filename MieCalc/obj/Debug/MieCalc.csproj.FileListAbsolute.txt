@@ -27,3 +27,4 @@ C:\Users\Елена\Documents\Desktop\MieCalc\MieCalc\obj\Debug\MieCalc.csprojRe
 C:\Users\Елена\Documents\Desktop\MieCalcVKR\MieCalc\bin\Debug\MieCalc.exe.config
 C:\Users\Елена\Documents\Desktop\MieCalcVKR\MieCalc\obj\Debug\MieCalc.exe
 C:\Users\Елена\Documents\Desktop\MieCalcVKR\MieCalc\obj\Debug\MieCalc.pdb
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\bin\Debug\MieCalc.exe.config
