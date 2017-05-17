@@ -51,7 +51,7 @@
             // 
             // CalculationButton
             // 
-            this.CalculationButton.Location = new System.Drawing.Point(339, 108);
+            this.CalculationButton.Location = new System.Drawing.Point(319, 108);
             this.CalculationButton.Name = "CalculationButton";
             this.CalculationButton.Size = new System.Drawing.Size(75, 23);
             this.CalculationButton.TabIndex = 17;
@@ -63,9 +63,9 @@
             // 
             this.PolarizationGB.Controls.Add(this.ParallelRB);
             this.PolarizationGB.Controls.Add(this.PerpendicularRB);
-            this.PolarizationGB.Location = new System.Drawing.Point(340, 20);
+            this.PolarizationGB.Location = new System.Drawing.Point(319, 20);
             this.PolarizationGB.Name = "PolarizationGB";
-            this.PolarizationGB.Size = new System.Drawing.Size(164, 83);
+            this.PolarizationGB.Size = new System.Drawing.Size(134, 82);
             this.PolarizationGB.TabIndex = 14;
             this.PolarizationGB.TabStop = false;
             this.PolarizationGB.Text = "Поляризация";
@@ -241,7 +241,7 @@
             this.Controls.Add(this.WavelengthLabel);
             this.Controls.Add(this.RangeLabel);
             this.Name = "InitialDataControl";
-            this.Size = new System.Drawing.Size(523, 150);
+            this.Size = new System.Drawing.Size(464, 142);
             this.PolarizationGB.ResumeLayout(false);
             this.PolarizationGB.PerformLayout();
             this.ResumeLayout(false);

@@ -77,6 +77,12 @@
       <DependentUpon>ResultDataControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Serializer.cs" />
+    <Compile Include="ViewSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewSettingsControl.Designer.cs">
+      <DependentUpon>ViewSettingsControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="ResultDataControl.resx">
       <DependentUpon>ResultDataControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSettingsControl.resx">
+      <DependentUpon>ViewSettingsControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
