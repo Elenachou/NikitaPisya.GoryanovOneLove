@@ -28,114 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.DiffractionParameterTB = new System.Windows.Forms.TextBox();
-            this.RefractiveIndexTB = new System.Windows.Forms.TextBox();
-            this.ScatteringFactorTB = new System.Windows.Forms.TextBox();
-            this.AbsortionFactorTB = new System.Windows.Forms.TextBox();
-            this.BackscatteringFactor = new System.Windows.Forms.TextBox();
+            this.DiffractionParametrLabel = new System.Windows.Forms.Label();
+            this.RefractiveIndexLabel = new System.Windows.Forms.Label();
+            this.ScatteringFactorLabel = new System.Windows.Forms.Label();
+            this.AbsortionFactorLabel = new System.Windows.Forms.Label();
+            this.BackscatteringFactorLabel = new System.Windows.Forms.Label();
+            this.DiffractionParameterTextBox = new System.Windows.Forms.TextBox();
+            this.RefractiveIndexTextBox = new System.Windows.Forms.TextBox();
+            this.ScatteringFactorTextBox = new System.Windows.Forms.TextBox();
+            this.AbsortionFactorTextBox = new System.Windows.Forms.TextBox();
+            this.BackscatteringFactorTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // DiffractionParametrLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Параметр дифракции:";
+            this.DiffractionParametrLabel.AutoSize = true;
+            this.DiffractionParametrLabel.Location = new System.Drawing.Point(12, 15);
+            this.DiffractionParametrLabel.Name = "DiffractionParametrLabel";
+            this.DiffractionParametrLabel.Size = new System.Drawing.Size(120, 13);
+            this.DiffractionParametrLabel.TabIndex = 0;
+            this.DiffractionParametrLabel.Text = "Параметр дифракции:";
             // 
-            // label2
+            // RefractiveIndexLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Показатель преломления:";
+            this.RefractiveIndexLabel.AutoSize = true;
+            this.RefractiveIndexLabel.Location = new System.Drawing.Point(12, 40);
+            this.RefractiveIndexLabel.Name = "RefractiveIndexLabel";
+            this.RefractiveIndexLabel.Size = new System.Drawing.Size(142, 13);
+            this.RefractiveIndexLabel.TabIndex = 1;
+            this.RefractiveIndexLabel.Text = "Показатель преломления:";
             // 
-            // label3
+            // ScatteringFactorLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Фактор эффективности рассеяния:";
+            this.ScatteringFactorLabel.AutoSize = true;
+            this.ScatteringFactorLabel.Location = new System.Drawing.Point(12, 65);
+            this.ScatteringFactorLabel.Name = "ScatteringFactorLabel";
+            this.ScatteringFactorLabel.Size = new System.Drawing.Size(190, 13);
+            this.ScatteringFactorLabel.TabIndex = 2;
+            this.ScatteringFactorLabel.Text = "Фактор эффективности рассеяния:";
             // 
-            // label4
+            // AbsortionFactorLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(198, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Фактор эффективности поглощения:";
+            this.AbsortionFactorLabel.AutoSize = true;
+            this.AbsortionFactorLabel.Location = new System.Drawing.Point(12, 90);
+            this.AbsortionFactorLabel.Name = "AbsortionFactorLabel";
+            this.AbsortionFactorLabel.Size = new System.Drawing.Size(198, 13);
+            this.AbsortionFactorLabel.TabIndex = 3;
+            this.AbsortionFactorLabel.Text = "Фактор эффективности поглощения:";
             // 
-            // label5
+            // BackscatteringFactorLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 115);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(245, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Фактор эффективности обратного рассеяния:";
+            this.BackscatteringFactorLabel.AutoSize = true;
+            this.BackscatteringFactorLabel.Location = new System.Drawing.Point(12, 115);
+            this.BackscatteringFactorLabel.Name = "BackscatteringFactorLabel";
+            this.BackscatteringFactorLabel.Size = new System.Drawing.Size(245, 13);
+            this.BackscatteringFactorLabel.TabIndex = 4;
+            this.BackscatteringFactorLabel.Text = "Фактор эффективности обратного рассеяния:";
             // 
-            // DiffractionParameterTB
+            // DiffractionParameterTextBox
             // 
-            this.DiffractionParameterTB.Location = new System.Drawing.Point(257, 12);
-            this.DiffractionParameterTB.Name = "DiffractionParameterTB";
-            this.DiffractionParameterTB.Size = new System.Drawing.Size(100, 20);
-            this.DiffractionParameterTB.TabIndex = 5;
-            this.DiffractionParameterTB.TextChanged += new System.EventHandler(this.DiffractionParameterTB_TextChanged);
+            this.DiffractionParameterTextBox.Location = new System.Drawing.Point(257, 12);
+            this.DiffractionParameterTextBox.Name = "DiffractionParameterTextBox";
+            this.DiffractionParameterTextBox.Size = new System.Drawing.Size(100, 20);
+            this.DiffractionParameterTextBox.TabIndex = 5;
             // 
-            // RefractiveIndexTB
+            // RefractiveIndexTextBox
             // 
-            this.RefractiveIndexTB.Location = new System.Drawing.Point(257, 37);
-            this.RefractiveIndexTB.Name = "RefractiveIndexTB";
-            this.RefractiveIndexTB.Size = new System.Drawing.Size(100, 20);
-            this.RefractiveIndexTB.TabIndex = 6;
-            this.RefractiveIndexTB.TextChanged += new System.EventHandler(this.RefractiveIndexTB_TextChanged);
+            this.RefractiveIndexTextBox.Location = new System.Drawing.Point(257, 37);
+            this.RefractiveIndexTextBox.Name = "RefractiveIndexTextBox";
+            this.RefractiveIndexTextBox.Size = new System.Drawing.Size(100, 20);
+            this.RefractiveIndexTextBox.TabIndex = 6;
             // 
-            // ScatteringFactorTB
+            // ScatteringFactorTextBox
             // 
-            this.ScatteringFactorTB.Location = new System.Drawing.Point(257, 62);
-            this.ScatteringFactorTB.Name = "ScatteringFactorTB";
-            this.ScatteringFactorTB.Size = new System.Drawing.Size(100, 20);
-            this.ScatteringFactorTB.TabIndex = 7;
+            this.ScatteringFactorTextBox.Location = new System.Drawing.Point(257, 62);
+            this.ScatteringFactorTextBox.Name = "ScatteringFactorTextBox";
+            this.ScatteringFactorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ScatteringFactorTextBox.TabIndex = 7;
             // 
-            // AbsortionFactorTB
+            // AbsortionFactorTextBox
             // 
-            this.AbsortionFactorTB.Location = new System.Drawing.Point(257, 87);
-            this.AbsortionFactorTB.Name = "AbsortionFactorTB";
-            this.AbsortionFactorTB.Size = new System.Drawing.Size(100, 20);
-            this.AbsortionFactorTB.TabIndex = 8;
+            this.AbsortionFactorTextBox.Location = new System.Drawing.Point(257, 87);
+            this.AbsortionFactorTextBox.Name = "AbsortionFactorTextBox";
+            this.AbsortionFactorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.AbsortionFactorTextBox.TabIndex = 8;
             // 
-            // BackscatteringFactor
+            // BackscatteringFactorTextBox
             // 
-            this.BackscatteringFactor.Location = new System.Drawing.Point(257, 112);
-            this.BackscatteringFactor.Name = "BackscatteringFactor";
-            this.BackscatteringFactor.Size = new System.Drawing.Size(100, 20);
-            this.BackscatteringFactor.TabIndex = 9;
+            this.BackscatteringFactorTextBox.Location = new System.Drawing.Point(257, 112);
+            this.BackscatteringFactorTextBox.Name = "BackscatteringFactorTextBox";
+            this.BackscatteringFactorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.BackscatteringFactorTextBox.TabIndex = 9;
             // 
             // IntegralResultDataControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.BackscatteringFactor);
-            this.Controls.Add(this.AbsortionFactorTB);
-            this.Controls.Add(this.ScatteringFactorTB);
-            this.Controls.Add(this.RefractiveIndexTB);
-            this.Controls.Add(this.DiffractionParameterTB);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BackscatteringFactorTextBox);
+            this.Controls.Add(this.AbsortionFactorTextBox);
+            this.Controls.Add(this.ScatteringFactorTextBox);
+            this.Controls.Add(this.RefractiveIndexTextBox);
+            this.Controls.Add(this.DiffractionParameterTextBox);
+            this.Controls.Add(this.BackscatteringFactorLabel);
+            this.Controls.Add(this.AbsortionFactorLabel);
+            this.Controls.Add(this.ScatteringFactorLabel);
+            this.Controls.Add(this.RefractiveIndexLabel);
+            this.Controls.Add(this.DiffractionParametrLabel);
             this.Name = "IntegralResultDataControl";
             this.Size = new System.Drawing.Size(374, 146);
             this.ResumeLayout(false);
@@ -145,15 +143,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox DiffractionParameterTB;
-        private System.Windows.Forms.TextBox RefractiveIndexTB;
-        private System.Windows.Forms.TextBox ScatteringFactorTB;
-        private System.Windows.Forms.TextBox AbsortionFactorTB;
-        private System.Windows.Forms.TextBox BackscatteringFactor;
+        private System.Windows.Forms.Label DiffractionParametrLabel;
+        private System.Windows.Forms.Label RefractiveIndexLabel;
+        private System.Windows.Forms.Label ScatteringFactorLabel;
+        private System.Windows.Forms.Label AbsortionFactorLabel;
+        private System.Windows.Forms.Label BackscatteringFactorLabel;
+        private System.Windows.Forms.TextBox DiffractionParameterTextBox;
+        private System.Windows.Forms.TextBox RefractiveIndexTextBox;
+        private System.Windows.Forms.TextBox ScatteringFactorTextBox;
+        private System.Windows.Forms.TextBox AbsortionFactorTextBox;
+        private System.Windows.Forms.TextBox BackscatteringFactorTextBox;
     }
 }

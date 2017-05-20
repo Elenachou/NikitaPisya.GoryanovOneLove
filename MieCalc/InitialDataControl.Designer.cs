@@ -30,21 +30,21 @@
         {
             this.CalculationButton = new System.Windows.Forms.Button();
             this.PolarizationGB = new System.Windows.Forms.GroupBox();
-            this.ParallelRB = new System.Windows.Forms.RadioButton();
-            this.PerpendicularRB = new System.Windows.Forms.RadioButton();
+            this.ParallelRadioButton = new System.Windows.Forms.RadioButton();
+            this.PerpendicularRadioButton = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.StepsTB = new System.Windows.Forms.TextBox();
-            this.WavelengthTB = new System.Windows.Forms.TextBox();
-            this.NumberOfDiscsTB = new System.Windows.Forms.TextBox();
-            this.RelativeHumidityTB = new System.Windows.Forms.TextBox();
-            this.RangeMaxTB = new System.Windows.Forms.TextBox();
-            this.RangeMinTB = new System.Windows.Forms.TextBox();
+            this.StepsTextBox = new System.Windows.Forms.TextBox();
+            this.WaveLengthTextBox = new System.Windows.Forms.TextBox();
+            this.DiscretsCountTextBox = new System.Windows.Forms.TextBox();
+            this.RelativeHumidityTextBox = new System.Windows.Forms.TextBox();
+            this.RangeMaxTextBox = new System.Windows.Forms.TextBox();
+            this.RangeMinTextBox = new System.Windows.Forms.TextBox();
             this.StepsLabel = new System.Windows.Forms.Label();
-            this.RElativeHumidityLabel = new System.Windows.Forms.Label();
-            this.NumberOfDiscsLabel = new System.Windows.Forms.Label();
-            this.WavelengthLabel = new System.Windows.Forms.Label();
+            this.RelativeHumidityLabel = new System.Windows.Forms.Label();
+            this.DiscretsCountLabel = new System.Windows.Forms.Label();
+            this.WaveLengthLabel = new System.Windows.Forms.Label();
             this.RangeLabel = new System.Windows.Forms.Label();
             this.PolarizationGB.SuspendLayout();
             this.SuspendLayout();
@@ -61,8 +61,8 @@
             // 
             // PolarizationGB
             // 
-            this.PolarizationGB.Controls.Add(this.ParallelRB);
-            this.PolarizationGB.Controls.Add(this.PerpendicularRB);
+            this.PolarizationGB.Controls.Add(this.ParallelRadioButton);
+            this.PolarizationGB.Controls.Add(this.PerpendicularRadioButton);
             this.PolarizationGB.Location = new System.Drawing.Point(319, 20);
             this.PolarizationGB.Name = "PolarizationGB";
             this.PolarizationGB.Size = new System.Drawing.Size(134, 82);
@@ -70,27 +70,27 @@
             this.PolarizationGB.TabStop = false;
             this.PolarizationGB.Text = "Поляризация";
             // 
-            // ParallelRB
+            // ParallelRadioButton
             // 
-            this.ParallelRB.AutoSize = true;
-            this.ParallelRB.Location = new System.Drawing.Point(7, 44);
-            this.ParallelRB.Name = "ParallelRB";
-            this.ParallelRB.Size = new System.Drawing.Size(99, 17);
-            this.ParallelRB.TabIndex = 1;
-            this.ParallelRB.TabStop = true;
-            this.ParallelRB.Text = "Параллельная";
-            this.ParallelRB.UseVisualStyleBackColor = true;
+            this.ParallelRadioButton.AutoSize = true;
+            this.ParallelRadioButton.Location = new System.Drawing.Point(7, 44);
+            this.ParallelRadioButton.Name = "ParallelRadioButton";
+            this.ParallelRadioButton.Size = new System.Drawing.Size(99, 17);
+            this.ParallelRadioButton.TabIndex = 1;
+            this.ParallelRadioButton.TabStop = true;
+            this.ParallelRadioButton.Text = "Параллельная";
+            this.ParallelRadioButton.UseVisualStyleBackColor = true;
             // 
-            // PerpendicularRB
+            // PerpendicularRadioButton
             // 
-            this.PerpendicularRB.AutoSize = true;
-            this.PerpendicularRB.Location = new System.Drawing.Point(7, 22);
-            this.PerpendicularRB.Name = "PerpendicularRB";
-            this.PerpendicularRB.Size = new System.Drawing.Size(122, 17);
-            this.PerpendicularRB.TabIndex = 0;
-            this.PerpendicularRB.TabStop = true;
-            this.PerpendicularRB.Text = "Перпендикулярная";
-            this.PerpendicularRB.UseVisualStyleBackColor = true;
+            this.PerpendicularRadioButton.AutoSize = true;
+            this.PerpendicularRadioButton.Location = new System.Drawing.Point(7, 22);
+            this.PerpendicularRadioButton.Name = "PerpendicularRadioButton";
+            this.PerpendicularRadioButton.Size = new System.Drawing.Size(122, 17);
+            this.PerpendicularRadioButton.TabIndex = 0;
+            this.PerpendicularRadioButton.TabStop = true;
+            this.PerpendicularRadioButton.Text = "Перпендикулярная";
+            this.PerpendicularRadioButton.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -117,48 +117,48 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "-";
             // 
-            // StepsTB
+            // StepsTextBox
             // 
-            this.StepsTB.Location = new System.Drawing.Point(220, 111);
-            this.StepsTB.Name = "StepsTB";
-            this.StepsTB.Size = new System.Drawing.Size(39, 20);
-            this.StepsTB.TabIndex = 10;
+            this.StepsTextBox.Location = new System.Drawing.Point(220, 111);
+            this.StepsTextBox.Name = "StepsTextBox";
+            this.StepsTextBox.Size = new System.Drawing.Size(39, 20);
+            this.StepsTextBox.TabIndex = 10;
             // 
-            // WavelengthTB
+            // WaveLengthTextBox
             // 
-            this.WavelengthTB.Location = new System.Drawing.Point(220, 41);
-            this.WavelengthTB.Name = "WavelengthTB";
-            this.WavelengthTB.Size = new System.Drawing.Size(39, 20);
-            this.WavelengthTB.TabIndex = 9;
-            this.WavelengthTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WavelengthTB_KeyPress);
+            this.WaveLengthTextBox.Location = new System.Drawing.Point(220, 41);
+            this.WaveLengthTextBox.Name = "WaveLengthTextBox";
+            this.WaveLengthTextBox.Size = new System.Drawing.Size(39, 20);
+            this.WaveLengthTextBox.TabIndex = 9;
+            this.WaveLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WavelengthTB_KeyPress);
             // 
-            // NumberOfDiscsTB
+            // DiscretsCountTextBox
             // 
-            this.NumberOfDiscsTB.Location = new System.Drawing.Point(220, 63);
-            this.NumberOfDiscsTB.Name = "NumberOfDiscsTB";
-            this.NumberOfDiscsTB.Size = new System.Drawing.Size(39, 20);
-            this.NumberOfDiscsTB.TabIndex = 8;
+            this.DiscretsCountTextBox.Location = new System.Drawing.Point(220, 63);
+            this.DiscretsCountTextBox.Name = "DiscretsCountTextBox";
+            this.DiscretsCountTextBox.Size = new System.Drawing.Size(39, 20);
+            this.DiscretsCountTextBox.TabIndex = 8;
             // 
-            // RelativeHumidityTB
+            // RelativeHumidityTextBox
             // 
-            this.RelativeHumidityTB.Location = new System.Drawing.Point(220, 87);
-            this.RelativeHumidityTB.Name = "RelativeHumidityTB";
-            this.RelativeHumidityTB.Size = new System.Drawing.Size(39, 20);
-            this.RelativeHumidityTB.TabIndex = 7;
+            this.RelativeHumidityTextBox.Location = new System.Drawing.Point(220, 87);
+            this.RelativeHumidityTextBox.Name = "RelativeHumidityTextBox";
+            this.RelativeHumidityTextBox.Size = new System.Drawing.Size(39, 20);
+            this.RelativeHumidityTextBox.TabIndex = 7;
             // 
-            // RangeMaxTB
+            // RangeMaxTextBox
             // 
-            this.RangeMaxTB.Location = new System.Drawing.Point(274, 17);
-            this.RangeMaxTB.Name = "RangeMaxTB";
-            this.RangeMaxTB.Size = new System.Drawing.Size(39, 20);
-            this.RangeMaxTB.TabIndex = 6;
+            this.RangeMaxTextBox.Location = new System.Drawing.Point(274, 17);
+            this.RangeMaxTextBox.Name = "RangeMaxTextBox";
+            this.RangeMaxTextBox.Size = new System.Drawing.Size(39, 20);
+            this.RangeMaxTextBox.TabIndex = 6;
             // 
-            // RangeMinTB
+            // RangeMinTextBox
             // 
-            this.RangeMinTB.Location = new System.Drawing.Point(220, 17);
-            this.RangeMinTB.Name = "RangeMinTB";
-            this.RangeMinTB.Size = new System.Drawing.Size(39, 20);
-            this.RangeMinTB.TabIndex = 5;
+            this.RangeMinTextBox.Location = new System.Drawing.Point(220, 17);
+            this.RangeMinTextBox.Name = "RangeMinTextBox";
+            this.RangeMinTextBox.Size = new System.Drawing.Size(39, 20);
+            this.RangeMinTextBox.TabIndex = 5;
             // 
             // StepsLabel
             // 
@@ -172,41 +172,41 @@
             this.StepsLabel.TabIndex = 4;
             this.StepsLabel.Text = "Шаг:";
             // 
-            // RElativeHumidityLabel
+            // RelativeHumidityLabel
             // 
-            this.RElativeHumidityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RelativeHumidityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RElativeHumidityLabel.AutoSize = true;
-            this.RElativeHumidityLabel.Location = new System.Drawing.Point(7, 90);
-            this.RElativeHumidityLabel.Name = "RElativeHumidityLabel";
-            this.RElativeHumidityLabel.Size = new System.Drawing.Size(163, 13);
-            this.RElativeHumidityLabel.TabIndex = 3;
-            this.RElativeHumidityLabel.Text = "Относительная влажность (%):";
+            this.RelativeHumidityLabel.AutoSize = true;
+            this.RelativeHumidityLabel.Location = new System.Drawing.Point(7, 90);
+            this.RelativeHumidityLabel.Name = "RelativeHumidityLabel";
+            this.RelativeHumidityLabel.Size = new System.Drawing.Size(163, 13);
+            this.RelativeHumidityLabel.TabIndex = 3;
+            this.RelativeHumidityLabel.Text = "Относительная влажность (%):";
             // 
-            // NumberOfDiscsLabel
+            // DiscretsCountLabel
             // 
-            this.NumberOfDiscsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DiscretsCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NumberOfDiscsLabel.AutoSize = true;
-            this.NumberOfDiscsLabel.Location = new System.Drawing.Point(7, 66);
-            this.NumberOfDiscsLabel.Name = "NumberOfDiscsLabel";
-            this.NumberOfDiscsLabel.Size = new System.Drawing.Size(206, 13);
-            this.NumberOfDiscsLabel.TabIndex = 2;
-            this.NumberOfDiscsLabel.Text = "Число дискретов по углу между 0 и 90:";
+            this.DiscretsCountLabel.AutoSize = true;
+            this.DiscretsCountLabel.Location = new System.Drawing.Point(7, 66);
+            this.DiscretsCountLabel.Name = "DiscretsCountLabel";
+            this.DiscretsCountLabel.Size = new System.Drawing.Size(206, 13);
+            this.DiscretsCountLabel.TabIndex = 2;
+            this.DiscretsCountLabel.Text = "Число дискретов по углу между 0 и 90:";
             // 
-            // WavelengthLabel
+            // WaveLengthLabel
             // 
-            this.WavelengthLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.WaveLengthLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.WavelengthLabel.AutoSize = true;
-            this.WavelengthLabel.Location = new System.Drawing.Point(7, 44);
-            this.WavelengthLabel.Name = "WavelengthLabel";
-            this.WavelengthLabel.Size = new System.Drawing.Size(109, 13);
-            this.WavelengthLabel.TabIndex = 1;
-            this.WavelengthLabel.Text = "Длина волны (мкм):";
+            this.WaveLengthLabel.AutoSize = true;
+            this.WaveLengthLabel.Location = new System.Drawing.Point(7, 44);
+            this.WaveLengthLabel.Name = "WaveLengthLabel";
+            this.WaveLengthLabel.Size = new System.Drawing.Size(109, 13);
+            this.WaveLengthLabel.TabIndex = 1;
+            this.WaveLengthLabel.Text = "Длина волны (мкм):";
             // 
             // RangeLabel
             // 
@@ -229,16 +229,16 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.StepsTB);
-            this.Controls.Add(this.WavelengthTB);
-            this.Controls.Add(this.NumberOfDiscsTB);
-            this.Controls.Add(this.RelativeHumidityTB);
-            this.Controls.Add(this.RangeMaxTB);
-            this.Controls.Add(this.RangeMinTB);
+            this.Controls.Add(this.StepsTextBox);
+            this.Controls.Add(this.WaveLengthTextBox);
+            this.Controls.Add(this.DiscretsCountTextBox);
+            this.Controls.Add(this.RelativeHumidityTextBox);
+            this.Controls.Add(this.RangeMaxTextBox);
+            this.Controls.Add(this.RangeMinTextBox);
             this.Controls.Add(this.StepsLabel);
-            this.Controls.Add(this.RElativeHumidityLabel);
-            this.Controls.Add(this.NumberOfDiscsLabel);
-            this.Controls.Add(this.WavelengthLabel);
+            this.Controls.Add(this.RelativeHumidityLabel);
+            this.Controls.Add(this.DiscretsCountLabel);
+            this.Controls.Add(this.WaveLengthLabel);
             this.Controls.Add(this.RangeLabel);
             this.Name = "InitialDataControl";
             this.Size = new System.Drawing.Size(464, 142);
@@ -255,20 +255,20 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox StepsTB;
-        private System.Windows.Forms.TextBox WavelengthTB;
-        private System.Windows.Forms.TextBox NumberOfDiscsTB;
-        private System.Windows.Forms.TextBox RelativeHumidityTB;
-        private System.Windows.Forms.TextBox RangeMaxTB;
-        private System.Windows.Forms.TextBox RangeMinTB;
+        private System.Windows.Forms.TextBox StepsTextBox;
+        private System.Windows.Forms.TextBox WaveLengthTextBox;
+        private System.Windows.Forms.TextBox DiscretsCountTextBox;
+        private System.Windows.Forms.TextBox RelativeHumidityTextBox;
+        private System.Windows.Forms.TextBox RangeMaxTextBox;
+        private System.Windows.Forms.TextBox RangeMinTextBox;
         private System.Windows.Forms.Label StepsLabel;
-        private System.Windows.Forms.Label RElativeHumidityLabel;
-        private System.Windows.Forms.Label NumberOfDiscsLabel;
-        private System.Windows.Forms.Label WavelengthLabel;
+        private System.Windows.Forms.Label RelativeHumidityLabel;
+        private System.Windows.Forms.Label DiscretsCountLabel;
+        private System.Windows.Forms.Label WaveLengthLabel;
         private System.Windows.Forms.Label RangeLabel;
         private System.Windows.Forms.GroupBox PolarizationGB;
-        private System.Windows.Forms.RadioButton ParallelRB;
-        private System.Windows.Forms.RadioButton PerpendicularRB;
+        private System.Windows.Forms.RadioButton ParallelRadioButton;
+        private System.Windows.Forms.RadioButton PerpendicularRadioButton;
         private System.Windows.Forms.Button CalculationButton;
     }
 }

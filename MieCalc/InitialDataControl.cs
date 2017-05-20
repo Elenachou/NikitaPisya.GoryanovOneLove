@@ -23,15 +23,15 @@ namespace MieCalc
             set
             {
                 _initialData = value;
-                WavelengthTB.Text = _initialData.WaveLength.ToString();
-                StepsTB.Text = _initialData.Steps.ToString();
-                RangeMaxTB.Text = _initialData.RangeMax.ToString();
-                RangeMinTB.Text = _initialData.RangeMin.ToString();
+                WaveLengthTextBox.Text = _initialData.WaveLength.ToString();
+                StepsTextBox.Text = _initialData.Steps.ToString();
+                RangeMaxTextBox.Text = _initialData.RangeMax.ToString();
+                RangeMinTextBox.Text = _initialData.RangeMin.ToString();
             }
             get
             {
-                _initialData.WaveLength = Convert.ToDouble(WavelengthTB.Text);
-                _initialData.Steps = Convert.ToInt32(StepsTB.Text);
+                _initialData.WaveLength = Convert.ToDouble(WaveLengthTextBox.Text);
+                _initialData.Steps = Convert.ToInt32(StepsTextBox.Text);
 
                 return _initialData;
             }

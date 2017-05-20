@@ -31,26 +31,26 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.ResultDGV = new System.Windows.Forms.DataGridView();
+            this.ResultDataGridView = new System.Windows.Forms.DataGridView();
             this.ResultChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label7 = new System.Windows.Forms.Label();
-            this.AngleTB = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.IntensityTB = new System.Windows.Forms.TextBox();
+            this.AngleLabel = new System.Windows.Forms.Label();
+            this.AngleTextBox = new System.Windows.Forms.TextBox();
+            this.IntensityLabel = new System.Windows.Forms.Label();
+            this.IntensityTextBox = new System.Windows.Forms.TextBox();
             this.integralResultDataControl1 = new MieCalc.IntegralResultDataControl();
-            ((System.ComponentModel.ISupportInitialize)(this.ResultDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultChart)).BeginInit();
             this.SuspendLayout();
             // 
-            // ResultDGV
+            // ResultDataGridView
             // 
-            this.ResultDGV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ResultDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.ResultDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ResultDGV.Location = new System.Drawing.Point(4, 3);
-            this.ResultDGV.Name = "ResultDGV";
-            this.ResultDGV.Size = new System.Drawing.Size(385, 210);
-            this.ResultDGV.TabIndex = 0;
+            this.ResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ResultDataGridView.Location = new System.Drawing.Point(4, 3);
+            this.ResultDataGridView.Name = "ResultDataGridView";
+            this.ResultDataGridView.Size = new System.Drawing.Size(385, 210);
+            this.ResultDataGridView.TabIndex = 0;
             // 
             // ResultChart
             // 
@@ -72,41 +72,41 @@
             this.ResultChart.TabIndex = 1;
             this.ResultChart.Text = "График";
             // 
-            // label7
+            // AngleLabel
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(392, 327);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Угол:";
+            this.AngleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AngleLabel.AutoSize = true;
+            this.AngleLabel.Location = new System.Drawing.Point(392, 327);
+            this.AngleLabel.Name = "AngleLabel";
+            this.AngleLabel.Size = new System.Drawing.Size(35, 13);
+            this.AngleLabel.TabIndex = 18;
+            this.AngleLabel.Text = "Угол:";
             // 
-            // AngleTB
+            // AngleTextBox
             // 
-            this.AngleTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AngleTB.Location = new System.Drawing.Point(522, 324);
-            this.AngleTB.Name = "AngleTB";
-            this.AngleTB.Size = new System.Drawing.Size(67, 20);
-            this.AngleTB.TabIndex = 17;
+            this.AngleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AngleTextBox.Location = new System.Drawing.Point(522, 324);
+            this.AngleTextBox.Name = "AngleTextBox";
+            this.AngleTextBox.Size = new System.Drawing.Size(67, 20);
+            this.AngleTextBox.TabIndex = 17;
             // 
-            // label6
+            // IntensityLabel
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(392, 305);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Интенсивность:";
+            this.IntensityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.IntensityLabel.AutoSize = true;
+            this.IntensityLabel.Location = new System.Drawing.Point(392, 305);
+            this.IntensityLabel.Name = "IntensityLabel";
+            this.IntensityLabel.Size = new System.Drawing.Size(88, 13);
+            this.IntensityLabel.TabIndex = 16;
+            this.IntensityLabel.Text = "Интенсивность:";
             // 
-            // IntensityTB
+            // IntensityTextBox
             // 
-            this.IntensityTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.IntensityTB.Location = new System.Drawing.Point(522, 302);
-            this.IntensityTB.Name = "IntensityTB";
-            this.IntensityTB.Size = new System.Drawing.Size(67, 20);
-            this.IntensityTB.TabIndex = 15;
+            this.IntensityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.IntensityTextBox.Location = new System.Drawing.Point(522, 302);
+            this.IntensityTextBox.Name = "IntensityTextBox";
+            this.IntensityTextBox.Size = new System.Drawing.Size(67, 20);
+            this.IntensityTextBox.TabIndex = 15;
             // 
             // integralResultDataControl1
             // 
@@ -121,15 +121,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.integralResultDataControl1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.AngleTB);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.IntensityTB);
+            this.Controls.Add(this.AngleLabel);
+            this.Controls.Add(this.AngleTextBox);
+            this.Controls.Add(this.IntensityLabel);
+            this.Controls.Add(this.IntensityTextBox);
             this.Controls.Add(this.ResultChart);
-            this.Controls.Add(this.ResultDGV);
+            this.Controls.Add(this.ResultDataGridView);
             this.Name = "ResultDataControl";
             this.Size = new System.Drawing.Size(796, 359);
-            ((System.ComponentModel.ISupportInitialize)(this.ResultDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -138,12 +138,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView ResultDGV;
+        private System.Windows.Forms.DataGridView ResultDataGridView;
         private System.Windows.Forms.DataVisualization.Charting.Chart ResultChart;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox AngleTB;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox IntensityTB;
+        private System.Windows.Forms.Label AngleLabel;
+        private System.Windows.Forms.TextBox AngleTextBox;
+        private System.Windows.Forms.Label IntensityLabel;
+        private System.Windows.Forms.TextBox IntensityTextBox;
         private IntegralResultDataControl integralResultDataControl1;
     }
 }

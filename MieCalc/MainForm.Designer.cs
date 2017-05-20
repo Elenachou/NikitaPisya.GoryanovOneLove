@@ -45,12 +45,12 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewSettingsControl1 = new MieCalc.ViewSettingsControl();
             this.resControl1 = new MieCalc.ResultDataControl();
             this.resControl2 = new MieCalc.ResultDataControl();
             this.resControl3 = new MieCalc.ResultDataControl();
             this.resControl4 = new MieCalc.ResultDataControl();
             this.initialDataControl1 = new MieCalc.InitialDataControl();
-            this.viewSettingsControl1 = new MieCalc.ViewSettingsControl();
             this.InitialDataGB.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -210,6 +210,13 @@
             this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(94, 20);
             this.оПрограммеToolStripMenuItem1.Text = "О программе";
             // 
+            // viewSettingsControl1
+            // 
+            this.viewSettingsControl1.Location = new System.Drawing.Point(482, 40);
+            this.viewSettingsControl1.Name = "viewSettingsControl1";
+            this.viewSettingsControl1.Size = new System.Drawing.Size(353, 127);
+            this.viewSettingsControl1.TabIndex = 5;
+            // 
             // resControl1
             // 
             this.resControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -256,13 +263,6 @@
             this.initialDataControl1.Name = "initialDataControl1";
             this.initialDataControl1.Size = new System.Drawing.Size(453, 140);
             this.initialDataControl1.TabIndex = 0;
-            // 
-            // viewSettingsControl1
-            // 
-            this.viewSettingsControl1.Location = new System.Drawing.Point(482, 40);
-            this.viewSettingsControl1.Name = "viewSettingsControl1";
-            this.viewSettingsControl1.Size = new System.Drawing.Size(353, 127);
-            this.viewSettingsControl1.TabIndex = 5;
             // 
             // MieCalcForm
             // 

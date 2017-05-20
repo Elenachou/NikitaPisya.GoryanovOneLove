@@ -23,12 +23,12 @@ namespace MieCalc
         void initialDataControl1_Calculated(object sender, EventArgs e)
         {
             var result = initialDataControl1.ResultData;
-            IntegralResultDataControl.CalculationResult = result;
+            resControl1.ResultData = result;
         }
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // Serializer.Serialize(initialDataControl1.InitialData, "c:\kjagsdfkjghasdf.txt");
+            //Serializer.Serialize(initialDataControl1.InitialData, "c:\");
         }
     }
 }

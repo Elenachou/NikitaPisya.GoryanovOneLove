@@ -16,24 +16,14 @@ namespace MieCalc
         {
             set
             {
-                DiffractionParameterTB.Text = value.DiffractionParameter.ToString();
+                DiffractionParameterTextBox.Text = value.DiffractionParameter.ToString();
             }
         }
+
 
         public IntegralResultDataControl()
         {
             InitializeComponent();
         }
-        
-        private void DiffractionParameterTB_TextChanged(object sender, EventArgs e) //Показатель дифракции
-        {
-             
-        }
-
-        private void RefractiveIndexTB_TextChanged(object sender, EventArgs e) // Показатель преломления
-        {
-
-        }
-
     }
 }

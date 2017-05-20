@@ -12,6 +12,17 @@ namespace MieCalc
 {
     public partial class ResultDataControl : UserControl
     {
+        private ResultData _resultData;
+
+        public ResultData ResultData 
+        { 
+            set
+            {
+                _resultData = value;
+                integralResultDataControl1.CalculationResult = value;
+
+            }
+        }
         public ResultDataControl()
         {
             InitializeComponent();
@@ -22,7 +33,7 @@ namespace MieCalc
             table.Columns.Add("S33", typeof(float));
             table.Columns.Add("S34", typeof(float));
 
-            ResultDGV.DataSource = table;
+            ResultDataGridView.DataSource = table;
         }
 
     }
