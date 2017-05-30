@@ -30,5 +30,15 @@ namespace MieCalc
         {
             //Serializer.Serialize(initialDataControl1.InitialData, "c:\");
         }
+
+        private void resControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void initialDataControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

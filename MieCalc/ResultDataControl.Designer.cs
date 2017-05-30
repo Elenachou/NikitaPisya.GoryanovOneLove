@@ -51,6 +51,7 @@
             this.ResultDataGridView.Name = "ResultDataGridView";
             this.ResultDataGridView.Size = new System.Drawing.Size(385, 210);
             this.ResultDataGridView.TabIndex = 0;
+            this.ResultDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ResultDataGridView_CellContentClick);
             // 
             // ResultChart
             // 

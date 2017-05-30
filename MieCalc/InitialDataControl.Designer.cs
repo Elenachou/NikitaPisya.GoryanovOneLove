@@ -91,6 +91,7 @@
             this.PerpendicularRadioButton.TabStop = true;
             this.PerpendicularRadioButton.Text = "Перпендикулярная";
             this.PerpendicularRadioButton.UseVisualStyleBackColor = true;
+            this.PerpendicularRadioButton.CheckedChanged += new System.EventHandler(this.PerpendicularRadioButton_CheckedChanged);
             // 
             // label8
             // 
@@ -159,6 +160,7 @@
             this.RangeMinTextBox.Name = "RangeMinTextBox";
             this.RangeMinTextBox.Size = new System.Drawing.Size(39, 20);
             this.RangeMinTextBox.TabIndex = 5;
+            this.RangeMinTextBox.TextChanged += new System.EventHandler(this.RangeMinTextBox_TextChanged);
             // 
             // StepsLabel
             // 
@@ -251,7 +253,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox IntialDateGB;
+       // private System.Windows.Forms.GroupBox InitialDateGB;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

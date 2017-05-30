@@ -8,6 +8,7 @@ namespace MieCalc
 {
     static class Program
     {
+        public static MieCalcForm mf = null;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -16,7 +17,7 @@ namespace MieCalc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MieCalcForm());
+            Application.Run(mf = new MieCalcForm());
         }
     }
 }

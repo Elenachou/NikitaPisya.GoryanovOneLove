@@ -20,6 +20,46 @@
             base.Dispose(disposing);
         }
 
+        public void FillStringGrid(int numGrid, int numRow, double ANG, double S11r, double S11, double S33, double S34)
+        {
+            ResultDataControl res = null;
+
+            switch (numGrid)
+            {
+                case 1:
+                    res = resControl1;
+                    break;
+                case 2:
+                    res = resControl2;
+                    break;
+                case 3:
+                    res = resControl3;
+                    break;
+                case 4:
+                    res = resControl4;
+                    break;
+            }
+            res.FillStringGrid(numRow, ANG, S11r, S11, S33, S34);
+            /*
+            with Form1 do begin
+            Grid.Cells[0, J] := FloatToStrF(ANG, ffFixed, 3, 0);
+            Grid.Cells[1, J] := FloatToStrF(S11r, ffFixed, 6, 6)
+            Grid.Cells[2, J] := FloatToStrF(S11, ffFixed, 6, 6);
+            Grid.Cells[3, J] := FloatToStrF(S33, ffFixed, 6, 6);
+            Grid.Cells[4, J] := FloatToStrF(S34, ffFixed, 6, 6);
+            Grid.RowCount := J + 1;
+            i1:= (sqr(s1r ^[j]) + sqr(s1i ^[j]));
+            i2:= (sqr(s2r ^[j]) + sqr(s2i ^[j]));
+            i0:= i1 + i2;
+            inten:= 0.5 * i0;
+            */
+        }
+
+        public int GetPolarizationSelector()
+        {
+            //return initialDataControl1.polari
+            return 0;
+        }
         #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
@@ -29,11 +69,16 @@
         private void InitializeComponent()
         {
             this.InitialDataGB = new System.Windows.Forms.GroupBox();
+            this.initialDataControl1 = new MieCalc.InitialDataControl();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.resControl1 = new MieCalc.ResultDataControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.resControl2 = new MieCalc.ResultDataControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.resControl3 = new MieCalc.ResultDataControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.resControl4 = new MieCalc.ResultDataControl();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,11 +91,6 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSettingsControl1 = new MieCalc.ViewSettingsControl();
-            this.resControl1 = new MieCalc.ResultDataControl();
-            this.resControl2 = new MieCalc.ResultDataControl();
-            this.resControl3 = new MieCalc.ResultDataControl();
-            this.resControl4 = new MieCalc.ResultDataControl();
-            this.initialDataControl1 = new MieCalc.InitialDataControl();
             this.InitialDataGB.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -71,6 +111,14 @@
             this.InitialDataGB.TabIndex = 0;
             this.InitialDataGB.TabStop = false;
             this.InitialDataGB.Text = "Исходные данные";
+            // 
+            // initialDataControl1
+            // 
+            this.initialDataControl1.Location = new System.Drawing.Point(6, 13);
+            this.initialDataControl1.Name = "initialDataControl1";
+            this.initialDataControl1.Size = new System.Drawing.Size(453, 140);
+            this.initialDataControl1.TabIndex = 0;
+            this.initialDataControl1.Load += new System.EventHandler(this.initialDataControl1_Load);
             // 
             // tabControl1
             // 
@@ -98,6 +146,17 @@
             this.tabPage1.Text = "Пыль";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // resControl1
+            // 
+            this.resControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resControl1.Location = new System.Drawing.Point(-4, 0);
+            this.resControl1.Name = "resControl1";
+            this.resControl1.Size = new System.Drawing.Size(835, 413);
+            this.resControl1.TabIndex = 2;
+            this.resControl1.Load += new System.EventHandler(this.resControl1_Load);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.resControl2);
@@ -108,6 +167,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "B1-Аэрозоль+Вода";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // resControl2
+            // 
+            this.resControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resControl2.Location = new System.Drawing.Point(-4, 0);
+            this.resControl2.Name = "resControl2";
+            this.resControl2.Size = new System.Drawing.Size(823, 271);
+            this.resControl2.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -120,6 +189,16 @@
             this.tabPage3.Text = "Соль+Вода (0.24)";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // resControl3
+            // 
+            this.resControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resControl3.Location = new System.Drawing.Point(-4, 0);
+            this.resControl3.Name = "resControl3";
+            this.resControl3.Size = new System.Drawing.Size(823, 271);
+            this.resControl3.TabIndex = 0;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.resControl4);
@@ -130,6 +209,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Соль+Вода (2.00)";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // resControl4
+            // 
+            this.resControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resControl4.Location = new System.Drawing.Point(-4, 0);
+            this.resControl4.Name = "resControl4";
+            this.resControl4.Size = new System.Drawing.Size(820, 271);
+            this.resControl4.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -216,53 +305,6 @@
             this.viewSettingsControl1.Name = "viewSettingsControl1";
             this.viewSettingsControl1.Size = new System.Drawing.Size(353, 127);
             this.viewSettingsControl1.TabIndex = 5;
-            // 
-            // resControl1
-            // 
-            this.resControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resControl1.Location = new System.Drawing.Point(-4, 0);
-            this.resControl1.Name = "resControl1";
-            this.resControl1.Size = new System.Drawing.Size(835, 413);
-            this.resControl1.TabIndex = 2;
-            // 
-            // resControl2
-            // 
-            this.resControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resControl2.Location = new System.Drawing.Point(-4, 0);
-            this.resControl2.Name = "resControl2";
-            this.resControl2.Size = new System.Drawing.Size(823, 271);
-            this.resControl2.TabIndex = 0;
-            // 
-            // resControl3
-            // 
-            this.resControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resControl3.Location = new System.Drawing.Point(-4, 0);
-            this.resControl3.Name = "resControl3";
-            this.resControl3.Size = new System.Drawing.Size(823, 271);
-            this.resControl3.TabIndex = 0;
-            // 
-            // resControl4
-            // 
-            this.resControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resControl4.Location = new System.Drawing.Point(-4, 0);
-            this.resControl4.Name = "resControl4";
-            this.resControl4.Size = new System.Drawing.Size(820, 271);
-            this.resControl4.TabIndex = 0;
-            // 
-            // initialDataControl1
-            // 
-            this.initialDataControl1.Location = new System.Drawing.Point(6, 13);
-            this.initialDataControl1.Name = "initialDataControl1";
-            this.initialDataControl1.Size = new System.Drawing.Size(453, 140);
-            this.initialDataControl1.TabIndex = 0;
             // 
             // MieCalcForm
             // 
