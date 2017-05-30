@@ -33,7 +33,7 @@ namespace MieCalc
             Complex Result = new Complex(0, 0);
 
             x = MLambda.Count;
-            for (k = 0; k < x; k++)
+            for (k = 0; k <= x - 1; k++)
             {
                 if (Lam == MLambda[k])
                 {
@@ -63,7 +63,7 @@ namespace MieCalc
             double S, Growth;
             Complex Result = new Complex(0, 0);
 
-            S = 0;
+            S = id.RelativeHumidity / 100;
             switch (j)
             {
                 case 0: // Пыль
@@ -90,17 +90,17 @@ namespace MieCalc
             }
             return Result;
         }
-        public void Mie(InitialData id, ResultData rd, double X, Complex REFREL, int numDiscrets)
+        public void Mie(InitialData id, ResultData rd, double X, Complex REFREL, int DiscretsCount)
         {
             double DX, P, T, DANG, YMOD, NSTOP, XSTOP,
                     PSI0, PSI1, CHI0, CHI1, APSI0, APSI1,
                     MQSCA = 0, MQEXT = 0, FN, PSI, APSI, CHI;
             double[] TAU = new double[100];
-            double[] THETA = TAU;
-            double[] AMU = TAU;
-            double[] PI = TAU;
-            double[] PI0 = TAU;
-            double[] PI1 = TAU;
+            double[] THETA = new double[100];
+            double[] AMU = new double[100];
+            double[] PI = new double[100];
+            double[] PI0 = new double[100];
+            double[] PI1 = new double[100];
             Complex[] D = new Complex[3000];
             Complex XI, XI0, XI1, Y, AN, BN;
             int NMX, NN, J, JJ, DN, RN, N;
@@ -111,8 +111,8 @@ namespace MieCalc
             NSTOP = XSTOP;
             YMOD = Math.Abs(Y.Real); // xxx
             NMX = (int) Math.Round(Math.Max(XSTOP, YMOD) + 15);
-            DANG = 1.570796327 / (numDiscrets - 1);
-            for (J = 1; J <= numDiscrets; J++)
+            DANG = 1.570796327 / (id.DiscretsCount - 1);
+            for (J = 1; J <= id.DiscretsCount; J++)
             {
                 THETA[J] = (J - 1) * DANG;
                 AMU[J] = Math.Cos(THETA[J]);
@@ -124,12 +124,12 @@ namespace MieCalc
                 RN = NMX - N + 1;
                 D[NMX - N] = (RN / Y) - (1 / (D[NMX - N + 1] + RN / Y)); // XXX
             }
-            for (J = 1; J <= numDiscrets; J++)
+            for (J = 1; J <= id.DiscretsCount; J++)
             {
                 PI0[J] = 0;
                 PI1[J] = 1;
             }
-            NN = 2 * numDiscrets - 1;
+            NN = 2 * id.DiscretsCount - 1;
             for (J = 1; J <= NN; J++)
             {
                 rd.S1[J] = new Complex(0, 0);
@@ -161,9 +161,9 @@ namespace MieCalc
                 MQSCA = MQSCA + (2 * RN + 1) * (Math.Abs(AN.Real) * Math.Abs(AN.Real) +
                                             Math.Abs(BN.Real) * Math.Abs(BN.Real));
                 MQEXT = MQEXT + (2 * RN + 1) * (AN.Real + BN.Real);
-                for (J = 1; J <= numDiscrets; J++)
+                for (J = 1; J <= id.DiscretsCount; J++)
                 {
-                    JJ = 2 * numDiscrets - J;
+                    JJ = 2 * id.DiscretsCount - J;
                     PI[J] = PI1[J];
                     TAU[J] = RN * AMU[J] * PI[J] - (RN + 1) * PI0[J];
                     P = Math.Pow(-1, N - 1);
@@ -183,7 +183,7 @@ namespace MieCalc
                 XI1 = new Complex(APSI1, -CHI1);
                 N = N + 1;
                 RN = N;
-                for (J = 1; J <= numDiscrets; J++)
+                for (J = 1; J <= id.DiscretsCount; J++)
                 {
                     PI1[J] = ((2 * RN - 1) / (RN - 1)) * AMU[J] * PI[J];
                     PI1[J] = PI1[J] - RN * PI0[J] / (RN - 1);
@@ -253,6 +253,8 @@ namespace MieCalc
                 */
             }
         }
+        // Rnum -> Steps
+        // Rstep -> Step
         public ResultData Calculate(InitialData id)
         {
             int i;
@@ -283,7 +285,7 @@ namespace MieCalc
             }
             // StringGrid6.RowCount := Steps + 1;
             R = id.RangeMin;
-            for (i = 0; i < id.Steps; i++)
+            for (i = 0; i <= id.Steps; i++)
             {
                 //StringGrid6.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
@@ -295,7 +297,7 @@ namespace MieCalc
             }
             //StringGrid7.RowCount := Steps + 1;
             R = id.RangeMin;
-            for (i = 0; i < id.Steps; i++)
+            for (i = 0; i <= id.Steps; i++)
             {
                 //StringGrid7.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
@@ -307,7 +309,7 @@ namespace MieCalc
             }
             //StringGrid8.RowCount := Steps + 1;
             R = id.RangeMin;
-            for (i = 0; i < id.Steps; i++)
+            for (i = 0; i <= id.Steps; i++)
             {
                 //StringGrid8.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
@@ -320,7 +322,7 @@ namespace MieCalc
             //CCalcs
             //StringGrid9.RowCount := Steps + 1;
             R = id.RangeMin;
-            for (i = 0; i < id.Steps; i++)
+            for (i = 0; i <= id.Steps; i++)
             {
                 //StringGrid9.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
@@ -332,7 +334,7 @@ namespace MieCalc
             }
             //StringGrid10.RowCount := Steps + 1;
             R = id.RangeMin;
-            for (i = 0; i < id.Steps; i++)
+            for (i = 0; i <= id.Steps; i++)
             {
                 //StringGrid10.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
@@ -344,7 +346,7 @@ namespace MieCalc
             }
             //StringGrid11.RowCount := Steps + 1;
             R = id.RangeMin;
-            for (i = 0; i < id.Steps; i++) {
+            for (i = 0; i <= id.Steps; i++) {
                 //StringGrid11.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
                 Mie(id, rd, X, AerIndex(id, id.WaveLength, 2), 2);
@@ -355,7 +357,7 @@ namespace MieCalc
             }
             //StringGrid12.RowCount := Steps + 1;
             R = id.RangeMin;
-            for (i = 0; i < id.Steps; i++) {
+            for (i = 0; i <= id.Steps; i++) {
                 //StringGrid12.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
                 Mie(id, rd, X, AerIndex(id, id.WaveLength, 3), 2);

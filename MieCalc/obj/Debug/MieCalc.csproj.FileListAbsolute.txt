@@ -79,3 +79,16 @@ N:\!Work\!Nik\VKR-master (2)\VKR-master\MieCalc\obj\Debug\MieCalc.pdb
 N:\!Work\!Nik\VKR-master (2)\VKR-master\MieCalc\bin\Debug\MieCalc.exe.config
 N:\!Work\!Nik\VKR-master (2)\VKR-master\MieCalc\bin\Debug\MieCalc.exe
 N:\!Work\!Nik\VKR-master (2)\VKR-master\MieCalc\bin\Debug\MieCalc.pdb
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\bin\Debug\MieCalc.exe.config
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\bin\Debug\MieCalc.exe
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\bin\Debug\MieCalc.pdb
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\obj\Debug\MieCalc.csprojResolveAssemblyReference.cache
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\obj\Debug\MieCalc.MieCalcForm.resources
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\obj\Debug\MieCalc.InitialDataControl.resources
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\obj\Debug\MieCalc.IntegralResultDataControl.resources
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\obj\Debug\MieCalc.Properties.Resources.resources
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\obj\Debug\MieCalc.ResultDataControl.resources
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\obj\Debug\MieCalc.ViewSettingsControl.resources
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\obj\Debug\MieCalc.csproj.GenerateResource.Cache
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\obj\Debug\MieCalc.exe
+C:\Users\Shkiper\Desktop\30.05 23-00\VKR-master (2)\VKR-master\MieCalc\obj\Debug\MieCalc.pdb
