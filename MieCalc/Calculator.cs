@@ -9,7 +9,7 @@ namespace MieCalc
 {
     public class Calculator
     {
-
+        
         /// <summary>
         /// 
         /// </summary>
@@ -17,6 +17,7 @@ namespace MieCalc
         /// <param name="y"></param>
         /// <returns></returns>
         ///
+
         public Complex RoundComplex(Complex number)
         {
             double real, img;
@@ -90,6 +91,7 @@ namespace MieCalc
             }
             return Result;
         }
+        
         public void Mie(InitialData id, ResultData rd, double X, Complex REFREL, int DiscretsCount)
         {
             double DX, P, T, DANG, YMOD, NSTOP, XSTOP,
@@ -107,7 +109,8 @@ namespace MieCalc
 
             DX = X;
             Y = X * REFREL;
-            XSTOP = X + 4 * Math.Pow(X, 1 / 3) + 2; //xxx
+            XSTOP = X + 4 * Math.Pow(X, 1/3) + 2; //xxx
+            //XSTOP = 20.187274058;
             NSTOP = XSTOP;
             YMOD = Math.Abs(Y.Real); // xxx
             NMX = (int) Math.Round(Math.Max(XSTOP, YMOD) + 15);
@@ -232,7 +235,7 @@ namespace MieCalc
                 ANG = DANG * (AJ - 1) * 57.2958;
 //                if (Program.mf.GetInitialDataControl().)
                     S11r = S11 + S12;
-                //else
+                  //else
 //                    S11r = S11 - S12;
                 Program.mf.FillStringGrid(numGrid, J-1, ANG, S11r, S11, S33, S34);
                 /*
@@ -261,6 +264,7 @@ namespace MieCalc
             double R, X;
             ResultData rd = new ResultData();
 
+
             FillStringGrid(id, rd, 1, 0);
             SaveResInArrays(id, rd, 0, id.WaveLength);
             FillStringGrid(id, rd, 2, 1);
@@ -275,99 +279,84 @@ namespace MieCalc
             R = id.RangeMin;
             for (i = 0; i <= id.Steps; i++)
             {
-                //StringGrid5.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
+
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
                 Mie(id, rd, X, AerIndex(id, id.WaveLength, 0), 2);
-                //StringGrid5.Cells[1, i] := FloatToStrF(QEXT, ffFixed, 6, 6);
-                //StringGrid5.Cells[2, i] := FloatToStrF(QSCA, ffFixed, 6, 6);
-                //StringGrid5.Cells[3, i] := FloatToStrF(QABS, ffFixed, 6, 6);
+
                 R = R + id.Step;
             }
             // StringGrid6.RowCount := Steps + 1;
             R = id.RangeMin;
             for (i = 0; i <= id.Steps; i++)
             {
-                //StringGrid6.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
+
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
                 Mie(id, rd, X, AerIndex(id, id.WaveLength, 1), 2);
-                //StringGrid6.Cells[1, i] := FloatToStrF(QEXT, ffFixed, 6, 6);
-                //StringGrid6.Cells[2, i] := FloatToStrF(QSCA, ffFixed, 6, 6);
-                //StringGrid6.Cells[3, i] := FloatToStrF(QABS, ffFixed, 6, 6);
+
                 R = R + id.Step;
             }
             //StringGrid7.RowCount := Steps + 1;
             R = id.RangeMin;
             for (i = 0; i <= id.Steps; i++)
             {
-                //StringGrid7.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
+
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
                 Mie(id, rd, X, AerIndex(id, id.WaveLength, 2), 2);
-                //StringGrid7.Cells[1, i] := FloatToStrF(QEXT, ffFixed, 6, 6);
-                //StringGrid7.Cells[2, i] := FloatToStrF(QSCA, ffFixed, 6, 6);
-                //StringGrid7.Cells[3, i] := FloatToStrF(QABS, ffFixed, 6, 6);
+
                 R = R + id.Step;
             }
             //StringGrid8.RowCount := Steps + 1;
             R = id.RangeMin;
             for (i = 0; i <= id.Steps; i++)
             {
-                //StringGrid8.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
                 Mie(id, rd, X, AerIndex(id, id.WaveLength, 3), 2);
-                //StringGrid8.Cells[1, i] := FloatToStrF(QEXT, ffFixed, 6, 6);
-                //StringGrid8.Cells[2, i] := FloatToStrF(QSCA, ffFixed, 6, 6);
-                //StringGrid8.Cells[3, i] := FloatToStrF(QABS, ffFixed, 6, 6);
+
                 R = R + id.Step;
             }
             //CCalcs
             //StringGrid9.RowCount := Steps + 1;
+            
             R = id.RangeMin;
             for (i = 0; i <= id.Steps; i++)
             {
-                //StringGrid9.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
                 Mie(id, rd, X, AerIndex(id, id.WaveLength, 0), 2);
-                //StringGrid9.Cells[1, i] := FloatToStrF(CEXT, ffFixed, 6, 6);
-                //StringGrid9.Cells[2, i] := FloatToStrF(CSCA, ffFixed, 6, 6);
-                //StringGrid9.Cells[3, i] := FloatToStrF(CABS, ffFixed, 6, 6);
+
                 R = R + id.Step;
             }
             //StringGrid10.RowCount := Steps + 1;
             R = id.RangeMin;
             for (i = 0; i <= id.Steps; i++)
             {
-                //StringGrid10.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
                 Mie(id, rd, X, AerIndex(id, id.WaveLength, 1), 2);
-                //StringGrid10.Cells[1, i] := FloatToStrF(CEXT, ffFixed, 6, 6);
-                //StringGrid10.Cells[2, i] := FloatToStrF(CSCA, ffFixed, 6, 6);
-                //StringGrid10.Cells[3, i] := FloatToStrF(CABS, ffFixed, 6, 6);
+
                 R = R + id.Step;
             }
             //StringGrid11.RowCount := Steps + 1;
             R = id.RangeMin;
             for (i = 0; i <= id.Steps; i++) {
-                //StringGrid11.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
                 Mie(id, rd, X, AerIndex(id, id.WaveLength, 2), 2);
-                //StringGrid11.Cells[1, i] := FloatToStrF(CEXT, ffFixed, 6, 6);
-                //StringGrid11.Cells[2, i] := FloatToStrF(CSCA, ffFixed, 6, 6);
-                //StringGrid11.Cells[3, i] := FloatToStrF(CABS, ffFixed, 6, 6);
+
                 R = R + id.Step;
             }
             //StringGrid12.RowCount := Steps + 1;
             R = id.RangeMin;
             for (i = 0; i <= id.Steps; i++) {
-                //StringGrid12.Cells[0, i] := FloatToStrF(R, ffFixed, 2, 2);
                 X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
                 Mie(id, rd, X, AerIndex(id, id.WaveLength, 3), 2);
-                //StringGrid12.Cells[1, i] := FloatToStrF(CEXT, ffFixed, 6, 6);
-                //StringGrid12.Cells[2, i] := FloatToStrF(CSCA, ffFixed, 6, 6);
-                //StringGrid12.Cells[3, i] := FloatToStrF(CABS, ffFixed, 6, 6);
+
                 R = R + id.Step;
             }
+            
+            //return rd;
 
-            return rd;
+            return new ResultData()
+            {
+                DiffractionParameter = 2 * Math.PI * id.RangeMin / id.WaveLength
+            };
         }
     }
 }

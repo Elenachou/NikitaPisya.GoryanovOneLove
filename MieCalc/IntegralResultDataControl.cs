@@ -17,9 +17,13 @@ namespace MieCalc
             set
             {
                 DiffractionParameterTextBox.Text = value.DiffractionParameter.ToString();
+                //RefractiveIndexTextBox.Text = value.rd.OptI[I].ToString();
+                ScatteringFactorTextBox.Text = value.QSCA.ToString();
+                AbsortionFactorTextBox.Text = value.QEXT.ToString();
+                BackscatteringFactorTextBox.Text = value.QABS.ToString();
+
             }
         }
-
 
         public IntegralResultDataControl()
         {
