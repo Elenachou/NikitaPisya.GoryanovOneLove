@@ -301,7 +301,7 @@
             // 
             // viewSettingsControl1
             // 
-            this.viewSettingsControl1.Location = new System.Drawing.Point(482, 40);
+            this.viewSettingsControl1.Location = new System.Drawing.Point(486, 40);
             this.viewSettingsControl1.Name = "viewSettingsControl1";
             this.viewSettingsControl1.Size = new System.Drawing.Size(353, 127);
             this.viewSettingsControl1.TabIndex = 5;
