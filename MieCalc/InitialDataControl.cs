@@ -14,7 +14,7 @@ namespace MieCalc
     {
         private ResultData _resultData;
         private InitialData _initialData;
-        private Calculator _calculator;
+
 
         public event EventHandler Calculated;
 
@@ -27,18 +27,12 @@ namespace MieCalc
                 StepsTextBox.Text = _initialData.Steps.ToString();
                 RangeMaxTextBox.Text = _initialData.RangeMax.ToString();
                 RangeMinTextBox.Text = _initialData.RangeMin.ToString();
-                DiscretsCountTextBox.Text = _initialData.DiscretsCount.ToString();
-                RelativeHumidityTextBox.Text = _initialData.RelativeHumidity.ToString();
-
             }
             get
             {
                 _initialData.WaveLength = Convert.ToDouble(WaveLengthTextBox.Text);
                 _initialData.Steps = Convert.ToInt32(StepsTextBox.Text);
-                _initialData.RangeMax = Convert.ToDouble(RangeMaxTextBox.Text);
-                _initialData.RangeMin = Convert.ToDouble(RangeMinTextBox.Text);
-                _initialData.DiscretsCount = Convert.ToInt32(DiscretsCountTextBox.Text);
-                _initialData.RelativeHumidity = Convert.ToDouble(RelativeHumidityTextBox.Text);
+
                 return _initialData;
             }
         }
@@ -53,13 +47,21 @@ namespace MieCalc
 
         public InitialDataControl()
         {
-            _calculator = new Calculator();
             InitializeComponent();
+            _initControlls();
         }
+
+        //Для сохранения данных при выходу
+        private void _initControlls()
+        {
+            
+        }
+
 
         private void Calculate()
         {
-            _resultData = _calculator.Calculate(InitialData);
+
+            _resultData = Calculator.Calculate(InitialData);
         }
 
         private void CalculationButton_Click_1(object sender, EventArgs e)
@@ -77,16 +79,6 @@ namespace MieCalc
             {
 
             }
-        }
-
-        private void RangeMinTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PerpendicularRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 

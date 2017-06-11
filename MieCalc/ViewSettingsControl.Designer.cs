@@ -57,7 +57,6 @@
             this.groupBox3.Size = new System.Drawing.Size(129, 118);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
             // 
             // radioButton4
             // 
@@ -113,7 +112,6 @@
             this.groupBox2.Size = new System.Drawing.Size(99, 94);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
             // radioButton7
             // 
@@ -158,7 +156,6 @@
             this.groupBox1.Size = new System.Drawing.Size(99, 94);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // radioButton10
             // 

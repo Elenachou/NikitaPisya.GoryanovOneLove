@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<InitialData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <WaveLength>10</WaveLength>
+  <RangeMax>100</RangeMax>
+  <RangeMin>10</RangeMin>
+  <Steps>20</Steps>
+  <DiscretsCount>5</DiscretsCount>
+  <RelativeHumidity>1</RelativeHumidity>
+</InitialData>

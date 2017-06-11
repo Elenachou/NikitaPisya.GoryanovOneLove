@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MieCalc
+namespace MieCalc.UnitTests
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace MieCalc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MieCalcForm());
+            Application.Run(new Form1());
         }
     }
 }

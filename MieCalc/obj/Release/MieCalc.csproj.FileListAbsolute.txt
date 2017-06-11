@@ -1,0 +1,16 @@
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\bin\Release\MieCalc.exe.config
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\bin\Release\MieCalc.exe
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\bin\Release\MieCalc.pdb
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\bin\Release\Newtonsoft.Json.dll
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\bin\Release\nunit.framework.dll
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\bin\Release\nunit.framework.xml
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Release\MieCalc.MieCalcForm.resources
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Release\MieCalc.InitialDataControl.resources
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Release\MieCalc.IntegralResultDataControl.resources
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Release\MieCalc.Properties.Resources.resources
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Release\MieCalc.ResultDataControl.resources
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Release\MieCalc.ViewSettingsControl.resources
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Release\MieCalc.csproj.GenerateResource.Cache
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Release\MieCalc.exe
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Release\MieCalc.pdb
+C:\Users\Елена\Documents\VKR\MainForm\Paper\MieCalc\obj\Release\MieCalc.csprojResolveAssemblyReference.cache

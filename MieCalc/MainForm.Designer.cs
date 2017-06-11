@@ -20,46 +20,6 @@
             base.Dispose(disposing);
         }
 
-        public void FillStringGrid(int numGrid, int numRow, double ANG, double S11r, double S11, double S33, double S34)
-        {
-            ResultDataControl res = null;
-
-            switch (numGrid)
-            {
-                case 1:
-                    res = resControl1;
-                    break;
-                case 2:
-                    res = resControl2;
-                    break;
-                case 3:
-                    res = resControl3;
-                    break;
-                case 4:
-                    res = resControl4;
-                    break;
-            }
-            res.FillStringGrid(numRow, ANG, S11r, S11, S33, S34);
-            /*
-            with Form1 do begin
-            Grid.Cells[0, J] := FloatToStrF(ANG, ffFixed, 3, 0);
-            Grid.Cells[1, J] := FloatToStrF(S11r, ffFixed, 6, 6)
-            Grid.Cells[2, J] := FloatToStrF(S11, ffFixed, 6, 6);
-            Grid.Cells[3, J] := FloatToStrF(S33, ffFixed, 6, 6);
-            Grid.Cells[4, J] := FloatToStrF(S34, ffFixed, 6, 6);
-            Grid.RowCount := J + 1;
-            i1:= (sqr(s1r ^[j]) + sqr(s1i ^[j]));
-            i2:= (sqr(s2r ^[j]) + sqr(s2i ^[j]));
-            i0:= i1 + i2;
-            inten:= 0.5 * i0;
-            */
-        }
-
-        public int GetPolarizationSelector()
-        {
-            //return initialDataControl1.polari
-            return 0;
-        }
         #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
@@ -118,7 +78,6 @@
             this.initialDataControl1.Name = "initialDataControl1";
             this.initialDataControl1.Size = new System.Drawing.Size(453, 140);
             this.initialDataControl1.TabIndex = 0;
-            this.initialDataControl1.Load += new System.EventHandler(this.initialDataControl1_Load);
             // 
             // tabControl1
             // 
@@ -155,7 +114,6 @@
             this.resControl1.Name = "resControl1";
             this.resControl1.Size = new System.Drawing.Size(835, 413);
             this.resControl1.TabIndex = 2;
-            this.resControl1.Load += new System.EventHandler(this.resControl1_Load);
             // 
             // tabPage2
             // 
@@ -275,6 +233,7 @@
             this.экспортироватьВExcelToolStripMenuItem.Name = "экспортироватьВExcelToolStripMenuItem";
             this.экспортироватьВExcelToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.экспортироватьВExcelToolStripMenuItem.Text = "Экспортировать в Excel";
+            this.экспортироватьВExcelToolStripMenuItem.Click += new System.EventHandler(this.экспортироватьВExcelToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 

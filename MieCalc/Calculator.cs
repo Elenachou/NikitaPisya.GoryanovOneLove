@@ -3,359 +3,160 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Numerics;
 
 namespace MieCalc
 {
-    public class Calculator
+    public static class Calculator
     {
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <returns></returns>
-        ///
 
-        public Complex RoundComplex(Complex number)
+        public static ResultData Calculate(InitialData data)
         {
-            double real, img;
-
-            //CReal:= StrToFloat(FloatToStrF(Real(CMPLX), ffFixed, 5, 5));
-            //CImg:= StrToFloat(FloatToStrF(Real(VarCmplx.VarComplexTimesNegI(CMPLX)), ffExponent, 5, 5));
-            real = Double.Parse(number.Real.ToString("00000.00000"));
-            img = Double.Parse((number.Imaginary * 1).ToString("00000.00000"));
-            return new Complex(real, img);
-        }
-        public Complex Interpolate(double Lam, List<double> MLambda, List<double> MN1, List<double> MN2)
-        {
-            int k, x;
-            Complex Result = new Complex(0, 0);
-
-            x = MLambda.Count;
-            for (k = 0; k <= x - 1; k++)
-            {
-                if (Lam == MLambda[k])
-                {
-                    Result = new Complex(MN1[k], MN2[k]);
-                    break;
-                }
-                else
-                    if ((Lam > MLambda[k]) && (Lam < MLambda[k + 1]))
-                {
-                    Result = new Complex((Lam - MLambda[k]) / (MLambda[k + 1] - MLambda[k]) *
-                                 (MN1[k + 1] - MN1[k]) + MN1[k],
-                                 (Lam - MLambda[k]) / (MLambda[k + 1] - MLambda[k]) *
-                                 (MN2[k + 1] - MN2[k]) + MN2[k]);
-                    break;
-                }
-            }
-            return Result;
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <returns></returns>
-        public Complex AerIndex(InitialData id, double Lam, int j)
-        {
-            double S, Growth;
-            Complex Result = new Complex(0, 0);
-
-            S = id.RelativeHumidity / 100;
-            switch (j)
-            {
-                case 0: // Пыль
-                    Result = Interpolate(Lam, id.Dust.MLambda, id.Dust.MN1, id.Dust.MN2);
-                    break;
-                case 1:
-                    Growth = (1 - S) / (1 - (S / InitialData.A2));
-                    Result = Interpolate(Lam, id.Water.MLambda, id.Water.MN1, id.Water.MN2) +
-                            (Interpolate(Lam, id.B1.MLambda, id.B1.MN1, id.B1.MN2) -
-                            Interpolate(Lam, id.Water.MLambda, id.Water.MN1, id.Water.MN2)) * Growth;
-                    break;
-                case 2:
-                    Growth = (1 - S) / (1 - (S / InitialData.A3));
-                    Result = Interpolate(Lam, id.Water.MLambda, id.Water.MN1, id.Water.MN2) +
-                    (Interpolate(Lam, id.SeaSalt.MLambda, id.SeaSalt.MN1, id.SeaSalt.MN2) -
-                    Interpolate(Lam, id.Water.MLambda, id.Water.MN1, id.Water.MN2)) * Growth;
-                    break;
-                case 3:
-                    Growth = (1 - S) / (1 - (S / InitialData.A4));
-                    Result = Interpolate(Lam, id.Water.MLambda, id.Water.MN1, id.Water.MN2) +
-                    (Interpolate(Lam, id.SeaSalt.MLambda, id.SeaSalt.MN1, id.SeaSalt.MN2) -
-                    Interpolate(Lam, id.Water.MLambda, id.Water.MN1, id.Water.MN2)) * Growth;
-                    break;
-            }
-            return Result;
-        }
-        
-        public void Mie(InitialData id, ResultData rd, double X, Complex REFREL, int DiscretsCount)
-        {
-            double DX, P, T, DANG, YMOD, NSTOP, XSTOP,
-                    PSI0, PSI1, CHI0, CHI1, APSI0, APSI1,
-                    MQSCA = 0, MQEXT = 0, FN, PSI, APSI, CHI;
-            double[] TAU = new double[100];
-            double[] THETA = new double[100];
-            double[] AMU = new double[100];
-            double[] PI = new double[100];
-            double[] PI0 = new double[100];
-            double[] PI1 = new double[100];
-            Complex[] D = new Complex[3000];
-            Complex XI, XI0, XI1, Y, AN, BN;
-            int NMX, NN, J, JJ, DN, RN, N;
-
-            DX = X;
-            Y = X * REFREL;
-            XSTOP = X + 4 * Math.Pow(X, 1/3) + 2; //xxx
-            //XSTOP = 20.187274058;
-            NSTOP = XSTOP;
-            YMOD = Math.Abs(Y.Real); // xxx
-            NMX = (int) Math.Round(Math.Max(XSTOP, YMOD) + 15);
-            DANG = 1.570796327 / (id.DiscretsCount - 1);
-            for (J = 1; J <= id.DiscretsCount; J++)
-            {
-                THETA[J] = (J - 1) * DANG;
-                AMU[J] = Math.Cos(THETA[J]);
-            }
-            D[NMX] = new Complex(0, 0);
-            NN = NMX-1;
-            for (N = 1; N <= NN; N++)
-            {
-                RN = NMX - N + 1;
-                D[NMX - N] = (RN / Y) - (1 / (D[NMX - N + 1] + RN / Y)); // XXX
-            }
-            for (J = 1; J <= id.DiscretsCount; J++)
-            {
-                PI0[J] = 0;
-                PI1[J] = 1;
-            }
-            NN = 2 * id.DiscretsCount - 1;
-            for (J = 1; J <= NN; J++)
-            {
-                rd.S1[J] = new Complex(0, 0);
-                rd.S2[J] = new Complex(0, 0);
-            }
-            PSI0 = Math.Cos(DX);
-            PSI1 = Math.Sin(DX);
-            CHI0 = -Math.Sin(X);
-            CHI1 = Math.Cos(X);
-            APSI0 = PSI0;
-            APSI1 = PSI1;
-            XI0 = new Complex(APSI0, -CHI0);
-            XI1 = new Complex(APSI1, -CHI1);
-            rd.QSCA = 0;
-            N = 1;
-            do
-            {
-                DN = N;
-                RN = N;
-                FN = (2 * RN + 1) / (RN * (RN + 1));
-                PSI = (2 * DN - 1) * PSI1 / DX - PSI0;
-                APSI = PSI;
-                CHI = (2 * RN - 1) * CHI1 / X - CHI0;
-                XI = new Complex(APSI, -CHI);
-                AN = (D[N] / REFREL + RN / X) * APSI - APSI1;
-                AN = AN / ((D[N] / REFREL + RN / X) * XI - XI1);
-                BN = (REFREL * D[N] + RN / X) * APSI - APSI1;
-                BN = BN / ((REFREL * D[N] + RN / X) * XI - XI1);
-                MQSCA = MQSCA + (2 * RN + 1) * (Math.Abs(AN.Real) * Math.Abs(AN.Real) +
-                                            Math.Abs(BN.Real) * Math.Abs(BN.Real));
-                MQEXT = MQEXT + (2 * RN + 1) * (AN.Real + BN.Real);
-                for (J = 1; J <= id.DiscretsCount; J++)
-                {
-                    JJ = 2 * id.DiscretsCount - J;
-                    PI[J] = PI1[J];
-                    TAU[J] = RN * AMU[J] * PI[J] - (RN + 1) * PI0[J];
-                    P = Math.Pow(-1, N - 1);
-                    rd.S1[J] = rd.S1[J] + FN * (AN * PI[J] + BN * TAU[J]);
-                    T = Math.Pow(-1, N);
-                    rd.S2[J] = rd.S2[J] + FN * (AN * TAU[J] + BN * PI[J]);
-                    if (J == JJ)
-                        break;
-                    rd.S1[JJ] = rd.S1[JJ] + FN * (AN * PI[J] * P + BN * TAU[J] * T);
-                    rd.S2[JJ] = rd.S2[JJ] + FN * (AN * TAU[J] * T + BN * PI[J] * P);
-                }
-                PSI0 = PSI1;
-                PSI1 = PSI;
-                APSI1 = PSI1;
-                CHI0 = CHI1;
-                CHI1 = CHI;
-                XI1 = new Complex(APSI1, -CHI1);
-                N = N + 1;
-                RN = N;
-                for (J = 1; J <= id.DiscretsCount; J++)
-                {
-                    PI1[J] = ((2 * RN - 1) / (RN - 1)) * AMU[J] * PI[J];
-                    PI1[J] = PI1[J] - RN * PI0[J] / (RN - 1);
-                    PI0[J] = PI[J];
-                }
-            } while ((N - 1 - NSTOP) > 0);
-            rd.QSCA = (2 / (X * X)) * MQSCA;
-            rd.QEXT = (4 / (X * X)) * rd.S1[1].Real;
-            rd.QABS = rd.QEXT - rd.QSCA;
-            rd.CSCA = (Math.Sqrt(id.WaveLength) / (2 * 3.14)) * MQSCA;
-            rd.CEXT = (Math.Sqrt(id.WaveLength) / (2 * 3.14)) * MQEXT;
-            rd.CABS = rd.CEXT - rd.CSCA;
-        }
-
-        public void SaveResInArrays(InitialData id, ResultData rd, int I, double WL)
-        {
-            rd.OptI[I] = AerIndex(id, WL, I).ToString();
-            rd.SCA[I] = rd.QSCA.ToString();
-            //ffFixed, 4, 4);
-            rd.EXT[I] = rd.QEXT.ToString();
-            rd.ABS[I] = rd.QABS.ToString();
-        }
-        public void FillStringGrid(InitialData id, ResultData rd, int numGrid, int typeRas)
-        {
-            double DANG, S11NOR, S11, S12, S11r, POL, S33, S34, ANG;
-            int NAN, AJ, J;
-            
-            // XXX NANG -> DiscretsCount
-            Mie(id, rd, id.X, AerIndex(id, id.WaveLength, typeRas), id.DiscretsCount);
-            DANG = 1.570796327 / (id.DiscretsCount - 1);
-            S11NOR = 0.5 * (Math.Sqrt(Math.Abs(rd.S2[1].Real)) + Math.Sqrt(Math.Abs(rd.S1[1].Real)));
-            NAN = 2 * id.DiscretsCount - 1;
-            for (J = 1; J <= NAN; J++) {
-                AJ = J;
-                S11 = 0.5 * Math.Sqrt(Math.Abs(rd.S2[J].Real));
-                S11 = S11 + 0.5 * Math.Sqrt(Math.Abs(rd.S1[J].Real));
-                S12 = 0.5 * Math.Sqrt(Math.Abs(rd.S2[J].Real));
-                S12 = S12 - 0.5 * Math.Sqrt(Math.Abs(rd.S1[J].Real));
-                POL = -S12 / S11;
-                S33 = (rd.S2[J] * (Complex.Conjugate(rd.S1[J]))).Real;
-                S33 = S33 / S11;
-                //S34 = (Complex.Negate(rd.S2[J]) * Complex.Conjugate(rd.S1[J])).Real;
-                S34 = (new Complex(rd.S2[J].Imaginary * -1, rd.S2[J].Real * -1) * Complex.Conjugate(rd.S1[J])).Real;
-                S34 = S34 / S11;
-                S11 = S11 / S11NOR;
-                ANG = DANG * (AJ - 1) * 57.2958;
-//                if (Program.mf.GetInitialDataControl().)
-                    S11r = S11 + S12;
-                  //else
-//                    S11r = S11 - S12;
-                Program.mf.FillStringGrid(numGrid, J-1, ANG, S11r, S11, S33, S34);
-                /*
-                with Form1 do begin
-                  Grid.Cells[0, J] := FloatToStrF(ANG, ffFixed, 3, 0);
-                    if RadioParPol.Checked then
-                    Grid.Cells[1, J] := FloatToStrF(S11 + S12, ffFixed, 6, 6)
-                    else
-                    Grid.Cells[1, J] := FloatToStrF(S11 - S12, ffFixed, 6, 6);
-                Grid.Cells[2, J] := FloatToStrF(S11, ffFixed, 6, 6);
-                Grid.Cells[3, J] := FloatToStrF(S33, ffFixed, 6, 6);
-                Grid.Cells[4, J] := FloatToStrF(S34, ffFixed, 6, 6);
-                Grid.RowCount := J + 1;
-                i1:= (sqr(s1r ^[j]) + sqr(s1i ^[j]));
-                i2:= (sqr(s2r ^[j]) + sqr(s2i ^[j]));
-                i0:= i1 + i2;
-                inten:= 0.5 * i0;
-                */
-            }
-        }
-        // Rnum -> Steps
-        // Rstep -> Step
-        public ResultData Calculate(InitialData id)
-        {
-            int i;
-            double R, X;
-            ResultData rd = new ResultData();
 
 
-            FillStringGrid(id, rd, 1, 0);
-            SaveResInArrays(id, rd, 0, id.WaveLength);
-            FillStringGrid(id, rd, 2, 1);
-            SaveResInArrays(id, rd, 1, id.WaveLength);
-            FillStringGrid(id, rd, 3, 2);
-            SaveResInArrays(id, rd, 2, id.WaveLength);
-            FillStringGrid(id, rd, 4, 3);
-            SaveResInArrays(id, rd, 3, id.WaveLength);
-            // Set grid5.rowcount = Steps + 1
-            //QCalcs
-            //StringGrid5.RowCount := Steps + 1;
-            R = id.RangeMin;
-            for (i = 0; i <= id.Steps; i++)
-            {
+////Заполнение массивов длинами волн и комплексными оптическими показателями преломления
+////для различных веществ в видимой и инфракрасной области спектра
+////Пыль
 
-                X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
-                Mie(id, rd, X, AerIndex(id, id.WaveLength, 0), 2);
+//  //Длины волн
+//        const double[] DustLambda = {0.2000,0.2500,0.3000,0.3371,0.4000,0.4880,0.5145,
+//        0.5500,0.6328,0.6943,0.8600,1.0600,1.3000,1.5360,1.8000,2.0000,2.2500,2.5000,2.7000,
+//        3.0000,3.2000,3.3923,3.5000,3.7500,4.0000,4.5000,5.0000,5.5000,6.0000,6.2000,6.5000,
+//        7.2000,7.9000,8.2000,8.5000,8.7000,9.0000,9.2000,9.5000,9.8000,10.000,10.591,11.000,
+//        11.500,12.500,13.000,14.000,14.800,15.000,16.400,17.200,18.000,18.500,20.000,21.300,
+//        22.500,25.000,27.900,30.000,35.000,40.000};
 
-                R = R + id.Step;
-            }
-            // StringGrid6.RowCount := Steps + 1;
-            R = id.RangeMin;
-            for (i = 0; i <= id.Steps; i++)
-            {
 
-                X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
-                Mie(id, rd, X, AerIndex(id, id.WaveLength, 1), 2);
+//  //Действительные части комплексных оптических показателей преломления пыли
+//        const double [] DustMN1 = {1.530,1.530,1.530,1.530,1.530,1.530,1.530,1.530,1.530,
+//        1.530,1.520,1.520,1.460,1.400,1.330,1.260,1.220,1.180,1.180,1.160,1.220,1.260,
+//        1.280,1.270,1.260,1.260,1.250,1.220,1.150,1.140,1.130,1.400,1.150,1.130,1.300,
+//        1.400,1.700,1.720,1.730,1.740,1.750,1.620,1.620,1.590,1.510,1.470,1.520,1.570,
+//        1.570,1.600,1.630,1.640,1.640,1.680,1.770,1.900,1.970,1.890,1.800,1.900,2.100};
+  
+//  //Мнимые части комплексных оптических показателей преломления пыли
+//        const double[] DustMN2 = {7.00E-2,3.00E-2,8.00E-3,8.00E-3,8.00E-3,8.00E-3,8.00E-3,
+//        8.00E-3,8.00E-3,8.00E-3,8.00E-3,8.00E-3,8.00E-3,8.00E-3,8.00E-3,8.00E-3,9.00E-3,
+//        9.00E-3,1.30E-2,1.20E-2,1.00E-2,1.30E-2,1.10E-2,1.10E-2,1.20E-2,1.40E-2,1.60E-2,
+//        2.10E-2,3.70E-2,3.90E-2,4.20E-2,5.50E-2,4.00E-2,7.40E-2,9.00E-2,1.00E-1,1.40E-1,
+//        1.50E-1,1.62E-1,1.62E-1,1.62E-1,1.20E-1,1.05E-1,1.00E-1,9.00E-2,1.00E-1,8.52E-2,
+//        1.00E-1,1.00E-1,1.00E-1,1.00E-1,1.15E-1,1.20E-1,2.20E-1,2.80E-1,2.80E-1,2.40E-1,
+//        3.20E-1,4.20E-1,5.00E-1,6.00E-1};
 
-                R = R + id.Step;
-            }
-            //StringGrid7.RowCount := Steps + 1;
-            R = id.RangeMin;
-            for (i = 0; i <= id.Steps; i++)
-            {
+//    //B1-Аэрозоль
+//    //Длины волн
+//        const double[] B1Lambda = new double[]{0.2000,0.2250,0.2500,0.2750,0.3000,0.3250,0.3500,0.3750,
+//        0.4000,0.4250,0.4500,0.4750,0.5000,0.5250,0.5500,0.5750,0.6000,0.6250,0.6500,0.6750,
+//        0.7000,0.7250,0.7500,0.7750,0.8000,0.8250,0.8500,0.8750,0.9000,0.9250,0.9500,0.9750,
+//        1.00,1.20,1.40,1.60,1.80,2.00,2.20,2.40,2.60,2.65,2.70,2.75,2.80,2.85,2.90,2.95,3.00,
+//        3.05,3.10,3.15,3.20,3.25,3.30,3.35,3.40,3.45,3.50,3.6,3.7,3.8,3.9,4.0,4.1,4.2,4.3,4.4,
+//        4.5,4.6,4.7,4.8,4.9,5.0,5.1,5.2,5.3,5.4,5.5,5.6,5.7,5.8,5.9,6.0,6.1,6.2,6.3,6.4,6.5,
+//        6.6,6.7,6.8,6.9,7.0,7.1,7.2,7.3,7.4,7.5,7.6,7.7,7.8,7.9,8.0,8.2,8.4,8.6,8.8,9.0,9.2,
+//        9.4,9.6,9.8,10.0,10.5,11.0,11.5,12.0,12.5,13.0,13.5,14.0,14.5,15.0,15.5,16.0,16.5,17.0,
+//        17.5,18.0,18.5,19.0,19.5,20.0,21.0,22,23,24,25,26,27,28,29,30,32,34,36,38,40};
 
-                X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
-                Mie(id, rd, X, AerIndex(id, id.WaveLength, 2), 2);
+//  //Действительные части комплексных оптических показателей преломления B1-Аэрозоля
+//        const double [] B1MN1 = {1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,
+//        1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,
+//        1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,1.392,
+//        1.392,1.392,1.392,1.392,1.392,1.392,1.391,1.388,1.386,1.383,1.382,1.381,1.386,
+//        1.390,1.393,1.396,1.402,1.408,1.413,1.420,1.426,1.433,1.440,1.448,1.452,1.455,
+//        1.458,1.464,1.469,1.475,1.481,1.487,1.490,1.493,1.497,1.500,1.502,1.505,1.508,
+//        1.510,1.511,1.505,1.500,1.500,1.500,1.505,1.510,1.519,1.527,1.532,1.536,1.536,
+//        1.535,1.527,1.515,1.477,1.447,1.442,1.454,1.492,1.557,1.571,1.580,1.585,1.584,
+//        1.581,1.572,1.561,1.476,1.456,1.601,1.774,1.861,1.907,1.919,1.885,1.840,1.818,
+//        1.783,1.741,1.712,1.698,1.694,1.690,1.697,1.696,1.669,1.679,1.773,1.812,1.811,
+//        1.809,1.808,1.807,1.806,1.804,1.806,1.808,1.812,1.816,1.820,1.817,1.815,1.812,
+//        1.809,1.808,1.808,1.808,1.811,1.817,1.823,1.820,1.820};
 
-                R = R + id.Step;
-            }
-            //StringGrid8.RowCount := Steps + 1;
-            R = id.RangeMin;
-            for (i = 0; i <= id.Steps; i++)
-            {
-                X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
-                Mie(id, rd, X, AerIndex(id, id.WaveLength, 3), 2);
+//  //Мнимые части комплексных оптических показателей преломления B1-Аэрозоля
+//        const double [] B1MN = {1.15E-5,1.24E-5,1.33E-5,1.44E-5,1.55E-5,1.67E-5,1.80E-5,1.94E-5,
+//        2.09E-5,2.25E-5,2.43E-5,2.62E-5,2.82E-5,3.04E-5,3.27E-5,3.53E-5,3.80E-5,4.10E-5,
+//        4.42E-5,4.76E-5,5.13E-5,5.53E-5,5.96E-5,6.42E-5,6.92E-5,7.46E-5,8.04E-5,8.66E-5,
+//        9.33E-5,1.01E-4,1.08E-4,1.17E-4,1.26E-4,2.29E-4,4.17E-4,5.62E-4,1.38E-3,2.51E-3,
+//        4.57E-3,8.32E-3,1.35E-2,1.84E-2,0.0244,0.0288,0.0300,0.0289,0.0274,0.0241,0.0209,
+//        0.0184,0.0167,0.0156,0.0144,0.0133,0.0124,0.0114,0.0105,0.0097,0.0090,0.00809,
+//        0.00686,0.00615,0.00568,0.00560,0.00573,0.00598,0.00622,0.00653,0.00695,0.00749,
+//        0.00806,0.00867,0.00929,0.0101,0.0110,0.0122,0.0136,0.0154,0.0181,0.0210,0.0254,
+//        0.0311,0.0396,0.0461,0.0474,0.0365,0.0305,0.0279,0.0280,0.0299,0.0326,0.0379,
+//        0.0510,0.0551,0.0493,0.0464,0.0438,0.0410,0.0392,0.0387,0.0394,0.0406,0.0438,
+//        0.0483,0.0649,0.0841,0.0970,0.1022,0.1092,0.1211,0.0944,0.0916,0.0646,0.0532,
+//        0.0398,0.0313,0.0301,0.0389,0.0442,0.0461,0.0478,0.0493,0.0504,0.0668,0.0722,
+//        0.0777,0.0832,0.1072,0.1091,0.1083,0.1075,0.1055,0.1035,0.1022,0.1048,0.1099,
+//        0.1176,0.1252,0.1337,0.1422,0.1497,0.1609,0.1722,0.1813,0.2081,0.2390,0.2744,
+//        0.3150,0.3617};
 
-                R = R + id.Step;
-            }
-            //CCalcs
-            //StringGrid9.RowCount := Steps + 1;
-            
-            R = id.RangeMin;
-            for (i = 0; i <= id.Steps; i++)
-            {
-                X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
-                Mie(id, rd, X, AerIndex(id, id.WaveLength, 0), 2);
+////Морская соль
+//  //Длины волн
+//        const double [] SeaSaltLambda = {0.2000,0.2500,0.3000,0.3371,0.4000,0.4880,
+//        0.5145,0.5500,0.6328,0.6943,0.8600,1.0600,1.3000,1.5360,1.8000,2.0000,2.2500,2.5000,
+//        2.7000,3.0000,3.2000,3.3923,3.5000,3.7500,4.0000,4.5000,5.0000,5.5000,6.0000,6.2000,
+//        6.5000,7.2000,7.9000,8.2000,8.5000,8.7000,9.0000,9.2000,9.5000,9.8000,10.000,10.591,
+//        11.000,11.500,12.500,13.000,14.000,14.800,15.000,16.400,17.200,18.000,18.500,20.000,
+//        21.300,22.500,25.000,27.000,30.000,35.000,40.000};
 
-                R = R + id.Step;
-            }
-            //StringGrid10.RowCount := Steps + 1;
-            R = id.RangeMin;
-            for (i = 0; i <= id.Steps; i++)
-            {
-                X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
-                Mie(id, rd, X, AerIndex(id, id.WaveLength, 1), 2);
+//  //Действительные части комплексных оптических показателей преломления моской соли
+//        const double [] SeaSaltMN1 = {1.510,1.510,1.510,1.510,1.500,1.500,1.500,1.500,1.490,
+//        1.490,1.480,1.470,1.470,1.460,1.450,1.450,1.440,1.430,1.400,1.610,1.490,1.480,1.480,
+//        1.470,1.480,1.490,1.470,1.420,1.410,1.600,1.460,1.420,1.400,1.420,1.480,1.600,1.650,
+//        1.610,1.580,1.560,1.540,1.500,1.480,1.480,1.420,1.410,1.410,1.430,1.450,1.560,1.740,
+//        1.780,1.770,1.760,1.760,1.760,1.760,1.770,1.770,1.760,1.740};
 
-                R = R + id.Step;
-            }
-            //StringGrid11.RowCount := Steps + 1;
-            R = id.RangeMin;
-            for (i = 0; i <= id.Steps; i++) {
-                X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
-                Mie(id, rd, X, AerIndex(id, id.WaveLength, 2), 2);
+//  //Мнимые части комплексных оптических показателей преломления моской соли
+//        const double [] SeaSaltMN2 = {1.00E-4,5.00E-6,2.00E-6,4.00E-7,3.00E-8,2.00E-8,1.00E-8,
+//        1.00E-8,2.00E-8,1.00E-7,3.00E-6,2.00E-4,4.00E-4,6.00E-4,8.00E-4,1.00E-3,2.00E-3,4.00E-3,
+//        7.00E-3,1.00E-2,3.00E-3,2.30E-3,1.60E-3,1.40E-3,1.40E-3,1.40E-3,2.50E-3,3.60E-3,1.10E-2,
+//        2.20E-2,5.00E-3,7.00E-3,1.30E-2,2.00E-2,2.60E-2,3.00E-2,2.80E-2,2.60E-2,1.80E-2,1.60E-2,
+//        1.50E-2,1.40E-2,1.40E-2,1.40E-2,1.60E-2,1.80E-2,2.30E-2,3.00E-2,3.50E-2,9.00E-2,1.20E-1,
+//        1.30E-1,1.35E-1,1.52E-1,1.65E-1,1.80E-1,2.05E-1,2.75E-1,3.00E-1,5.00E-1,1.00E-0};
 
-                R = R + id.Step;
-            }
-            //StringGrid12.RowCount := Steps + 1;
-            R = id.RangeMin;
-            for (i = 0; i <= id.Steps; i++) {
-                X = 2 * Math.PI * R * InitialData.RefMed / id.WaveLength;
-                Mie(id, rd, X, AerIndex(id, id.WaveLength, 3), 2);
+////Вода
+//  //Длины волн
+//        const double [] WaterLambda = {0.2000,0.2250,0.2500,0.2750,0.3000,0.3250,0.3500,
+//        0.3750,0.4000,0.4250,0.4500,0.4750,0.5000,0.5250,0.5500,0.5750,0.6000,0.6250,0.6500,
+//        0.6750,0.7000,0.7250,0.7500,0.7750,0.8000,0.8250,0.8500,0.8750,0.9000,0.9250,0.9500,
+//        0.9750,1.00,1.20,1.40,1.60,1.80,2.00,2.20,2.40,2.60,2.65,2.70,2.75,2.80,2.85,2.90,
+//        2.95,3.00,3.05,3.10,3.15,3.20,3.25,3.30,3.35,3.40,3.45,3.50,3.6,3.7,3.8,3.9,4.0,
+//        4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,5.0,5.1,5.2,5.3,5.4,5.5,5.6,5.7,5.8,5.9,6.0,
+//        6.1,6.2,6.3,6.4,6.5,6.6,6.7,6.8,6.9,7.0,7.1,7.2,7.3,7.4,7.5,7.6,7.7,7.8,7.9,8.0,
+//        8.2,8.4,8.6,8.8,9.0,9.2,9.4,9.6,9.8,10.0,10.5,11.0,11.5,12.0,12.5,13.0,13.5,14.0,
+//        14.5,15.0,15.5,16.0,16.5,17.0,17.5,18.0,18.5,19.0,19.5,20.0,21.0,22,23,24,25,26,
+//        27,28,29,30,32,34,36,38,40};
 
-                R = R + id.Step;
-            }
-            
-            //return rd;
+//  //Действительные части комплексных оптических показателей преломления воды
+//        const double [] WaterMN1 = {1.396,1.373,1.362,1.354,1.349,1.346,1.343,1.341,1.339,
+//        1.338,1.337,1.336,1.335,1.334,1.333,1.333,1.332,1.332,1.331,1.331,1.331,1.330,
+//        1.330,1.330,1.329,1.329,1.329,1.328,1.328,1.328,1.327,1.327,1.327,1.324,1.321,
+//        1.317,1.312,1.306,1.296,1.279,1.242,1.219,1.188,1.157,1.142,1.149,1.201,1.292,
+//        1.371,1.426,1.467,1.483,1.478,1.467,1.450,1.432,1.420,1.410,1.400,1.385,1.374,
+//        1.364,1.357,1.351,1.346,1.342,1.338,1.334,1.332,1.330,1.330,1.330,1.328,1.325,
+//        1.322,1.317,1.312,1.305,1.298,1.289,1.277,1.262,1.248,1.265,1.319,1.363,1.357,
+//        1.347,1.339,1.334,1.329,1.324,1.321,1.317,1.314,1.312,1.309,1.307,1.304,1.302,
+//        1.299,1.297,1.294,1.291,1.286,1.281,1.275,1.269,1.262,1.255,1.247,1.239,1.229,
+//        1.218,1.185,1.153,1.126,1.111,1.123,1.146,1.177,1.210,1.241,1.270,1.297,1.325,
+//        1.351,1.376,1.401,1.423,1.443,1.461,1.476,1.480,1.487,1.500,1.511,1.521,1.531,
+//        1.539,1.545,1.549,1.551,1.551,1.546,1.536,1.527,1.522,1.519};
 
+//  //Мнимые части комплексных оптических показателей преломления воды
+//        const double [] WaterMN2 = {1.10E-7,4.90E-8,3.35E-8,2.35E-8,1.60E-8,1.08E-8,6.50E-9,
+//        3.50E-9,1.86E-9,1.30E-9,1.02E-9,9.35E-10,1.00E-9,1.32E-9,1.96E-9,3.60E-9,1.09E-8,
+//        1.39E-8,1.64E-8,2.23E-8,3.35E-8,9.15E-8,1.56E-7,1.48E-7,1.25E-7,1.82E-7,2.93E-7,
+//        3.91E-7,4.86E-7,1.06E-6,2.93E-6,3.48E-6,2.89E-6,9.89E-6,1.38E-4,8.55E-5,1.15E-4,
+//        1.10E-3,2.89E-4,9.56E-4,3.17E-3,6.70E-3,0.019,0.059,0.115,0.185,0.268,0.298,0.272,
+//        0.240,0.192,0.135,0.0924,0.0610,0.0368,0.0261,0.0195,0.0132,0.0094,0.00515,0.00360,
+//        0.00340,0.00380,0.00460,0.00562,0.00688,0.00845,0.0103,0.0134,0.0147,0.0147,0.0150,
+//        0.0137,0.0124,0.0111,0.0101,0.0098,0.0103,0.0116,0.0142,0.0203,0.0330,0.0622,0.107,
+//        0.131,0.0880,0.0570,0.0449,0.0392,0.0356,0.0337,0.0327,0.0322,0.0320,0.0320,0.0321,
+//        0.0322,0.0324,0.0326,0.0328,0.0331,0.0335,0.0339,0.0343,0.0351,0.0361,0.0372,0.0385,
+//        0.0399,0.0415,0.0433,0.0454,0.0479,0.0508,0.0662,0.0968,0.142,0.199,0.259,0.305,
+//        0.343,0.370,0.388,0.402,0.414,0.422,0.428,0.429,0.429,0.426,0.421,0.414,0.404,
+//        0.393,0.382,0.373,0.367,0.361,0.356,0.350,0.344,0.338,0.333,0.328,0.324,0.329,
+//        0.343,0.361,0.385};
+
+
+        int refMed = 1;
             return new ResultData()
             {
-                DiffractionParameter = 2 * Math.PI * id.RangeMin / id.WaveLength
+                 DiffractionParameter = 2 * Math.PI * data.RangeMin * refMed / data.WaveLength
             };
         }
     }

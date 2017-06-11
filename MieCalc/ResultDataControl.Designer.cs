@@ -51,7 +51,6 @@
             this.ResultDataGridView.Name = "ResultDataGridView";
             this.ResultDataGridView.Size = new System.Drawing.Size(385, 210);
             this.ResultDataGridView.TabIndex = 0;
-            this.ResultDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ResultDataGridView_CellContentClick);
             // 
             // ResultChart
             // 
@@ -139,12 +138,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView ResultDataGridView;
         private System.Windows.Forms.DataVisualization.Charting.Chart ResultChart;
         private System.Windows.Forms.Label AngleLabel;
         private System.Windows.Forms.TextBox AngleTextBox;
         private System.Windows.Forms.Label IntensityLabel;
         private System.Windows.Forms.TextBox IntensityTextBox;
         private IntegralResultDataControl integralResultDataControl1;
+        public System.Windows.Forms.DataGridView ResultDataGridView;
     }
 }
